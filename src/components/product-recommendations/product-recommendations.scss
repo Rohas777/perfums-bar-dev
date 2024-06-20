@@ -1,0 +1,86 @@
+.product-recommendations {
+    padding-top: 55px;
+    border-top: 1px solid #6f6f6f;
+    margin-bottom: 155px;
+    @media only screen and (max-width: 992px) {
+        margin-bottom: 80px;
+    }
+
+    .swiper-header {
+        margin-bottom: 110px;
+        @include flexbox();
+        justify-content: space-between;
+        padding-right: 280px;
+        text-transform: uppercase;
+        @media only screen and (max-width: 1260px) {
+            padding-right: 0;
+        }
+        @media only screen and (max-width: 992px) {
+            margin-bottom: 60px;
+            align-items: center;
+            gap: 30px;
+        }
+        @media only screen and (max-width: 600px) {
+            flex-direction: column;
+            align-items: start;
+            gap: 15px;
+            margin-bottom: 40px;
+        }
+    }
+
+    .swiper-nav {
+        width: 140px;
+        @include flexbox();
+        justify-content: space-between;
+        align-items: center;
+        @media only screen and (max-width: 600px) {
+            align-self: end;
+        }
+    }
+    .swiper-nav-item {
+        position: static;
+        margin-top: 0;
+        width: 45px;
+        height: 45px;
+        border: 2px solid $black;
+
+        svg {
+            width: 8px;
+            height: 16px;
+        }
+
+        path {
+            stroke-width: 3px;
+        }
+        @media (hover: hover) {
+            &:hover {
+                background-color: $red;
+                border-color: $red;
+
+                path {
+                    stroke: #fff;
+                }
+            }
+        }
+
+        &:active {
+            background-color: $red;
+            border-color: $red;
+
+            path {
+                stroke: #fff;
+            }
+        }
+    }
+
+    .swiper-button-next {
+        background-color: $black;
+
+        path {
+            stroke: #ffffff;
+        }
+    }
+    .swiper-wrapper {
+        width: 100%;
+    }
+}

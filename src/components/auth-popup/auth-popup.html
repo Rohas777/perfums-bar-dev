@@ -1,0 +1,204 @@
+<aside class="auth-popup">
+    <div class="auth-popup__wrapper">
+        <div class="auth-popup__container">
+            <div class="auth-popup__logo">
+                <img
+                    src="/images/popup-logo.png"
+                    alt="Perfums Bar Авторизация"
+                />
+            </div>
+            <div class="auth-popup__close">
+                <span></span>
+            </div>
+            <div class="auth-popup__content">
+                <div class="auth-popup__switcher">
+                    <button
+                        data-switch="signin"
+                        class="auth-popup__switch btn active"
+                    >
+                        Вход
+                    </button>
+                    <button data-switch="signup" class="auth-popup__switch btn">
+                        Регистрация
+                    </button>
+                </div>
+                <form
+                    id="signin"
+                    class="auth-popup__form auth-popup__form_signin active"
+                    data-auth-type="tel"
+                >
+                    <div
+                        class="message-wrapper auth-popup__item auth-popup__item_signin-email-tel"
+                    >
+                        <button class="auth-popup__signin-switch">
+                            Войти по e-mail
+                        </button>
+                        <div class="auth-popup__item-wrapper">
+                            <input
+                                class="active"
+                                placeholder="+7 (XXX) XXX XX XX"
+                                type="tel"
+                                data-type="tel"
+                                data-desc="Войти с помощью телефона"
+                                name="signin-tel"
+                                id="signin-tel"
+                            />
+                            <input
+                                placeholder="Ваш e-mail"
+                                type="text"
+                                data-desc="Войти по e-mail"
+                                data-type="email"
+                                name="signin-email"
+                                id="signin-email"
+                            />
+                        </div>
+                        <div class="message"></div>
+                    </div>
+                    <div
+                        class="message-wrapper auth-popup__item auth-popup__item_pass"
+                    >
+                        <div class="auth-popup__item-wrapper">
+                            <input
+                                placeholder="Пароль"
+                                type="password"
+                                name="signin-pass"
+                                id="signin-pass"
+                            />
+                            <button class="show-pass">
+                                @@include('svg/eye.html')
+                            </button>
+                        </div>
+                        <a href="/auth.html" class="auth-popup__signin-reset">
+                            Я не помню пароль
+                        </a>
+                        <div class="message"></div>
+                    </div>
+                    <button type="submit" class="btn btn_black">ВОЙТИ</button>
+                </form>
+                <form
+                    id="signup"
+                    class="auth-popup__form auth-popup__form_signup"
+                >
+                    <div class="message-wrapper auth-popup__item">
+                        <input
+                            placeholder="Ваше имя"
+                            type="text"
+                            name="signup-name"
+                            id="signup-name"
+                        />
+                        <div class="message"></div>
+                    </div>
+                    <div class="message-wrapper auth-popup__item">
+                        <input
+                            placeholder="+7 (XXX) XXX XX XX"
+                            type="tel"
+                            data-type="tel"
+                            name="signup-tel"
+                            id="signup-tel"
+                        />
+                        <div class="message"></div>
+                    </div>
+                    <div class="message-wrapper auth-popup__item">
+                        <input
+                            placeholder="Ваш e-mail"
+                            type="text"
+                            data-type="email"
+                            name="signup-email"
+                            id="signup-email"
+                        />
+                        <div class="message"></div>
+                    </div>
+                    <div class="message-wrapper auth-popup__item">
+                        <div class="auth-popup__item-wrapper">
+                            <div class="auth-popup__sex">
+                                <span>Пол</span>
+                                <label for="signup-sex-male">
+                                    <input
+                                        type="radio"
+                                        name="signup-sex"
+                                        id="signup-sex-male"
+                                        value="male"
+                                    />
+                                    <span>муж</span>
+                                </label>
+                                <label for="signup-sex-female">
+                                    <input
+                                        type="radio"
+                                        name="signup-sex"
+                                        id="signup-sex-female"
+                                        value="female"
+                                    />
+                                    <span>жен</span>
+                                </label>
+                            </div>
+                            <div class="auth-popup__date">
+                                <span>Дата рождения</span>
+                                <label for="signup-date">
+                                    <input
+                                        type="date"
+                                        name="signup-date"
+                                        id="signup-date"
+                                        data-type="birth"
+                                    />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="message"></div>
+                    </div>
+                    <div
+                        class="message-wrapper auth-popup__item auth-popup__item_pass"
+                    >
+                        <div class="pass-hint">
+                            <p>
+                                Пароль должен соответствовать следующим
+                                критериям:
+                            </p>
+                            <ul>
+                                <li>Минимум одна буква</li>
+                                <li>Минимум одна цифра</li>
+                                <li>Минимум 8 символов</li>
+                                <li>Минимум одна заглавная буква</li>
+                                <li>Только латинские симфолы</li>
+                            </ul>
+                        </div>
+                        <div class="auth-popup__item-wrapper">
+                            <input
+                                placeholder="Пароль"
+                                type="password"
+                                name="signup-pass"
+                                id="signup-pass"
+                                data-type="signup-pass"
+                                class="original-pass"
+                            />
+                            <button class="show-pass">
+                                @@include('svg/eye.html')
+                            </button>
+                        </div>
+                        <div class="message"></div>
+                    </div>
+                    <div
+                        class="message-wrapper auth-popup__item auth-popup__item_pass-repeat"
+                    >
+                        <div class="auth-popup__item-wrapper">
+                            <input
+                                placeholder="Повторите пароль"
+                                type="password"
+                                name="signup-pass-repeat"
+                                id="signup-pass-repeat"
+                                data-type="signup-pass-repeat"
+                            />
+                            <button class="show-pass">
+                                @@include('svg/eye.html')
+                            </button>
+                        </div>
+                        <div class="message"></div>
+                    </div>
+                    <button type="submit" class="btn btn_black">
+                        зАРЕГИСТРИРОВАТЬСЯ
+                    </button>
+                </form>
+            </div>
+            <img src="/images/bg/popup2.png" class="auth-popup__bg" alt="" />
+        </div>
+    </div>
+</aside>

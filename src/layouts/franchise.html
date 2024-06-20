@@ -1,0 +1,498 @@
+<main>
+    <section class="offer">
+        <div class="offer__slider swiper">
+            <div class="swiper-wrapper">
+                @@loop('components/offer-slide/offer-slide.html',
+                '../data/franchise-slider.json')
+            </div>
+            <div class="swiper-nav">
+                <div class="container">
+                    <div class="swiper-nav-item swiper-button-prev">
+                        @@include('svg/arrow-mini.html', {'left': true,
+                        'bottom': false})
+                    </div>
+                    <div class="swiper-nav-item swiper-button-next">
+                        @@include('svg/arrow-mini.html', {'left': false,
+                        'bottom': false})
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="offer__slide-down slide-down">
+            @@include('svg/arrow-mini.html', {'left': false, 'bottom': true})
+        </div>
+    </section>
+    <section class="advantages">
+        <div class="advantages__bg">
+            <img src="/images/franchise/adv-bg.png" alt="" />
+        </div>
+        <div class="container">
+            <h2 class="title">Почему стоит выбрать нас</h2>
+            <div class="advantages__wrapper">
+                <div class="advantages__item">
+                    <div class="advantages__image">
+                        <div class="advantages__image-wrapper">
+                            <img src="/images/franchise/adv1.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="advantages__text">
+                        <h3>Узнаваемость бренда</h3>
+                        <p>
+                            Наши магазины присутствуют в более чем 220 городах
+                            России, СНГ и Европы
+                        </p>
+                    </div>
+                </div>
+                <div class="advantages__item">
+                    <div class="advantages__image">
+                        <div class="advantages__image-wrapper">
+                            <img src="/images/franchise/adv2.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="advantages__text">
+                        <h3>Универсальный выбор</h3>
+                        <p>
+                            Идеально подходит как для мужчин, так и для женщин,
+                            а также для крупных и небольших городов. Наша
+                            продукция охватывает около 20% рынка парфюмерии
+                        </p>
+                    </div>
+                </div>
+                <div class="advantages__item">
+                    <div class="advantages__image">
+                        <div class="advantages__image-wrapper">
+                            <img src="/images/franchise/adv3.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="advantages__text">
+                        <h3>Финансовое преимущество</h3>
+                        <p>
+                            Бизнес имеет быстрый срок окупаемости, небольшими
+                            вложениями и высокой маржинальностью
+                        </p>
+                    </div>
+                </div>
+                <div class="advantages__item">
+                    <div class="advantages__image">
+                        <div class="advantages__image-wrapper">
+                            <img src="/images/franchise/adv4.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="advantages__text">
+                        <h3>Стабильность</h3>
+                        <p>
+                            Постоянный спрос вне сезона или моды с большим
+                            ассортиментом
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="utp">
+        <div class="utp__bg">
+            <img src="/images/bg/franch-utp.png" alt="появились вопросы?" />
+        </div>
+        <div class="container">
+            <div class="utp__desc">
+                <h2 class="title">появились вопросы?</h2>
+                <p>Оставьте свой вопрос и мы ответим в течении 10 минут</p>
+            </div>
+            <div class="utp__feedback">
+                <form id="feedback">
+                    <div class="utp__feedback-wrapper message-wrapper">
+                        <input
+                            type="text"
+                            name="feedback-name"
+                            id="feedback-name"
+                            placeholder="Ваше имя"
+                        />
+                        <input
+                            type="tel"
+                            data-type="tel"
+                            name="feedback-tel"
+                            id="feedback-tel"
+                            placeholder="+7 (XXX) XXX XX XX"
+                        />
+                        <p class="message"></p>
+                        <button type="submit" class="btn">
+                            <span>Оставить заявку</span>
+                            @@include('svg/arrow.html', {"color": "black"})
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section class="benefits">
+        <div class="container">
+            <h2 class="title">Выгодное участие в партнёрской программе</h2>
+            <div class="benefits__wrapper">
+                <div class="benefits__item">
+                    <div class="benefits__text">
+                        <h3>Роялти</h3>
+                        <p>ежемесячные выплаты</p>
+                    </div>
+                    <p class="benefits__desc"><span>0 ₽</span></p>
+                </div>
+                <div class="benefits__item">
+                    <div class="benefits__text">
+                        <h3>паушальный взнос</h3>
+                        <p>Оплата за участие в программе</p>
+                    </div>
+                    <p class="benefits__desc"><span>0 ₽</span></p>
+                </div>
+                <div class="benefits__item">
+                    <div class="benefits__text">
+                        <h3>начальная закупка продукции</h3>
+                        <p></p>
+                    </div>
+                    <p class="benefits__desc benefits__desc_mini">
+                        <span>индивидуальный расчет</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="recieves" class="recieves">
+        <div class="recieves__bg">
+            <img src="/images/bg/recieves.png" alt="" />
+        </div>
+        <div class="container">
+            <h2 class="title">СТАНОВЯСЬ ПАРТНЕРОМ, вы получаете:</h2>
+            <div class="recieves__wrapper">
+                <div class="recieves__item recieves__item_big">
+                    <div class="recieves__image">
+                        @@include('svg/revieves1.html')
+                    </div>
+                    <div class="recieves__text">
+                        <h3>Эксклюзивные права</h3>
+                        <p>
+                            Подписав договор с нами, вы получаете эксклюзивное
+                            право использовать нашу торговую марку. Мы
+                            гарантируем, что в вашем регионе не будет других
+                            партнеров с таким же договором, обеспечивая вам
+                            максимальные возможности для развития бизнеса.
+                        </p>
+                    </div>
+                </div>
+                <div class="recieves__item">
+                    <div class="recieves__image">
+                        @@include('svg/revieves2.html')
+                    </div>
+                    <div class="recieves__text">
+                        <h3>Эксклюзивный брендовый контракт на РФ и СНГ</h3>
+                    </div>
+                </div>
+                <div class="recieves__item">
+                    <div class="recieves__image">
+                        @@include('svg/revieves3.html')
+                    </div>
+                    <div class="recieves__text">
+                        <h3>
+                            Бесплатные консультации по развитию бизнеса на всех
+                            этапах
+                        </h3>
+                    </div>
+                </div>
+                <div class="recieves__item">
+                    <div class="recieves__image">
+                        @@include('svg/revieves4.html')
+                    </div>
+                    <div class="recieves__text">
+                        <h3>
+                            Общение с опытными партнерами, успешно работающими в
+                            индустрии многие годы
+                        </h3>
+                    </div>
+                </div>
+                <div class="recieves__item">
+                    <div class="recieves__image">
+                        @@include('svg/revieves5.html')
+                    </div>
+                    <div class="recieves__text">
+                        <h3>
+                            Индивидуальный подход по составлению заказов,
+                            консультирование по выбору места
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="production">
+        <div class="container">
+            <h2 class="title">О продукции</h2>
+            <div class="production__wrapper">
+                <div class="production__item">
+                    <div class="production__image">
+                        <img src="/images/franchise/prod1.png" alt="" />
+                    </div>
+                    <h3>Высокое качество сырья</h3>
+                    <p>
+                        Наши поставщики - Франция, Швейцария и другие страны,
+                        гарантируют непревзойденное качество сырья
+                    </p>
+                </div>
+                <div class="production__item">
+                    <div class="production__image">
+                        <img src="/images/franchise/prod2.png" alt="" />
+                    </div>
+                    <h3>Широкий ассортимент парфюмерии</h3>
+                    <p>
+                        Более 400 наименований: духи, аромамасла, диффузоры,
+                        автопарфюм, чтобы каждый клиент нашел идеальный выбор
+                    </p>
+                </div>
+                <div class="production__item">
+                    <div class="production__image">
+                        <img src="/images/franchise/prod3.png" alt="" />
+                    </div>
+                    <h3>Хиты продаж</h3>
+                    <p>
+                        Более 70 продуктов, которые завоевали сердца наших
+                        клиентов и обеспечивают абсолютный успех
+                    </p>
+                </div>
+                <div class="production__item">
+                    <div class="production__image">
+                        <img src="/images/franchise/prod4.png" alt="" />
+                    </div>
+                    <h3>Право выбора</h3>
+                    <p>
+                        Мы предоставляем гибкость выбора объемов флакона: 8, 20,
+                        30, 50, 100 мл, чтобы каждый мог выбрать подходящий
+                        размер
+                    </p>
+                </div>
+                <div class="production__item">
+                    <div class="production__image">
+                        <img src="/images/franchise/prod5.png" alt="" />
+                    </div>
+                    <h3>Сертифицированная продукция</h3>
+                    <p>
+                        Вся наша продукция обладает сертификатами качества,
+                        гарантируя надежность и безопасность
+                    </p>
+                </div>
+                <div class="production__item">
+                    <div class="production__image">
+                        <img src="/images/franchise/prod6.png" alt="" />
+                    </div>
+                    <h3>Узнаваемость бренда</h3>
+                    <p>
+                        Более 200 магазинов по всему миру отражают нашу
+                        узнаваемость и доверие клиентов
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="stages">
+        <div class="stages__bg">
+            <img src="/images/bg/stages.png" alt="" />
+        </div>
+        <div class="container">
+            <h2 class="title">Этапы работы с заказчиком</h2>
+            <div class="stages__wrapper">
+                <div class="stages__item">
+                    <p class="stages__number">1</p>
+                    <div class="stages__text">
+                        <h3>Заказать консультацию</h3>
+                        <p>
+                            Оставьте заявку на консультацию, и мы обсудим все
+                            условия и детали вашего будущего бизнеса в
+                            парфюмерной индустрии
+                        </p>
+                    </div>
+                </div>
+                <div class="stages__item">
+                    <p class="stages__number">2</p>
+                    <div class="stages__text">
+                        <h3>Полный пакет материалов</h3>
+                        <p>
+                            Мы предоставим вам все необходимые материалы для
+                            успешного старта: презентации, макеты, прайс-листы,
+                            каталоги, логотипы и многое другое
+                        </p>
+                    </div>
+                </div>
+                <div class="stages__item">
+                    <p class="stages__number">3</p>
+                    <div class="stages__text">
+                        <h3>
+                            Бесплатная консультация по выбору торговых площадей
+                        </h3>
+                        <p>
+                            Мы подскажем Вам как выбрать идеальное место для
+                            вашего магазина
+                        </p>
+                    </div>
+                </div>
+                <div class="stages__item">
+                    <p class="stages__number">4</p>
+                    <div class="stages__text">
+                        <h3>Составление и отгрузка первого заказа</h3>
+                        <p>
+                            Мы предложим вам грамотно составить первый заказ
+                            продукции и оперативно его отгрузим, чтобы вы могли
+                            начать продажи без лишних задержек
+                        </p>
+                    </div>
+                </div>
+                <div class="stages__item">
+                    <p class="stages__number">5</p>
+                    <div class="stages__text">
+                        <h3>Бесплатная поддержка</h3>
+                        <p>
+                            Получите профессиональные консультации и непрерывную
+                            поддержку на всех этапах вашего бизнеса, чтобы
+                            достичь максимального успеха
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="audience">
+        <div class="container">
+            <h2 class="title">Наша целевая аудитория</h2>
+            <div class="audience__wrapper">
+                <div class="audience__item">
+                    <div class="audience__image">
+                        <img src="/images/franchise/audience1.png" alt="" />
+                        <h3>Новички в бизнесе</h3>
+                    </div>
+                    <p>
+                        Идеально подходит для амбициозных и целеустремленных
+                        новичков в мире бизнеса, желающих учиться на практике и
+                        получать прибыль от развития бизнеса, даже без
+                        предварительного опыта в маркетинге, финансах и
+                        управлении персоналом
+                    </p>
+                </div>
+                <div class="audience__item">
+                    <div class="audience__image">
+                        <img src="/images/franchise/audience2.png" alt="" />
+                        <h3>Начинающие бизнесмены</h3>
+                    </div>
+                    <p>
+                        Отличный выбор для предпринимателей, уже имеющих опыт в
+                        сфере маркетинга, финансов и управления персоналом, но
+                        желающих получить базовую консультационную поддержку для
+                        эффективного развития своего бизнеса
+                    </p>
+                </div>
+                <div class="audience__item">
+                    <div class="audience__image">
+                        <img src="/images/franchise/audience3.png" alt="" />
+                        <h3>Опытные предприниматели</h3>
+                    </div>
+                    <p>
+                        Идеальный выбор для бизнесменов, обладающих опытом в
+                        маркетинге, финансах и управлении персоналом, и
+                        стремящихся к максимизации дохода и прибыли путем
+                        открытия и развития сети магазинов
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about">
+        <div class="container">
+            <h2 class="title">О нас</h2>
+            <div class="about__wrapper">
+                <div class="about__img">
+                    <img src="/images/about/2.png" alt="О нас" />
+                </div>
+                <div class="about__text">
+                    <p>
+                        <span>Perfums Bar</span> - это эволюция парфюмерии
+                        нового поколения, воплощающая в себе наследие великой
+                        парфюмерной истории. Мы стремимся к совершенству,
+                        отбирая только лучшие ингредиенты от престижных
+                        парфюмерных домов Франции и Швейцарии. Наши ароматы
+                        создаются на базе передовых инноваций и богатого опыта,
+                        чтобы подарить вам самые изысканные парфюмерные
+                        композиции.
+                    </p>
+                    <p>
+                        <strong>Наша миссия</strong> - предоставить нашим
+                        клиентам роскошь, обеспечивая высочайшее качество
+                        продукции по доступным ценам.
+                    </p>
+                    <p>
+                        <strong>Perfums Bar</strong> представляет более 400
+                        уникальных ароматов и более 200 брендовых магазинов, и
+                        это число продолжает расти. Наша уверенность и успех
+                        говорят о высоком качестве продукции, подтвержденном
+                        взаимовыгодным партнерством
+                    </p>
+                    <a href="/about.html" class="btn btn_black">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="shops" class="stores">
+        <div class="container">
+            <h2 class="title">Магазины</h2>
+            <div class="stores__swiper-container swiper-container">
+                <div class="swiper stores__slider">
+                    <div class="swiper-wrapper">
+                        <a
+                            href="/images/franchise/stores1.png"
+                            data-fancybox="stores"
+                            data-caption="Caption #1"
+                            class="swiper-slide"
+                        >
+                            <img src="/images/franchise/stores1.png" alt="" />
+                        </a>
+                        <a
+                            href="/images/franchise/stores2.png"
+                            data-fancybox="stores"
+                            data-caption="Caption #1"
+                            class="swiper-slide"
+                        >
+                            <img src="/images/franchise/stores2.png" alt="" />
+                        </a>
+                        <a
+                            href="/images/franchise/stores3.png"
+                            data-fancybox="stores"
+                            data-caption="Caption #1"
+                            class="swiper-slide"
+                        >
+                            <img src="/images/franchise/stores3.png" alt="" />
+                        </a>
+                        <a
+                            href="/images/franchise/stores4.png"
+                            data-fancybox="stores"
+                            data-caption="Caption #1"
+                            class="swiper-slide"
+                        >
+                            <img src="/images/franchise/stores4.png" alt="" />
+                        </a>
+                        <a
+                            href="/images/franchise/stores1.png"
+                            data-fancybox="stores"
+                            data-caption="Caption #1"
+                            class="swiper-slide"
+                        >
+                            <img src="/images/franchise/stores1.png" alt="" />
+                        </a>
+                    </div>
+                </div>
+                <div class="swiper-nav">
+                    <div class="swiper-nav-item swiper-button-prev">
+                        @@include('svg/arrow-mini.html', {'left': true,
+                        'bottom': false})
+                    </div>
+                    <div class="swiper-nav-item swiper-button-next">
+                        @@include('svg/arrow-mini.html', {'left': false,
+                        'bottom': false})
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

@@ -1,0 +1,254 @@
+<main>
+    <section class="breadcrumbs">
+        <div class="container">
+            <p>
+                <a href="/" title="На главную">Главная</a> /
+                <a href="/cart.html" title="В корзину">корзина</a> / оплата
+            </p>
+        </div>
+    </section>
+    <section class="payment">
+        <div class="container">
+            <div class="payment__head">
+                <h2 class="title">Оплата</h2>
+                <span class="separator"></span>
+                <span class="payment__count">3 шт</span>
+            </div>
+            <form id="paymentForm" class="payment__wrapper">
+                <div class="payment__data">
+                    <h3>заполните данные</h3>
+                    <div class="payment__block">
+                        <label for="paymentName" class="message-wrapper">
+                            <input
+                                type="text"
+                                name="paymentName"
+                                id="paymentName"
+                                placeholder="Ваше имя"
+                            />
+                            <div class="payment__marker">
+                                @@include('svg/square-success.html')
+                                @@include('svg/square-failure.html')
+                                <p class="message">Успешно</p>
+                            </div>
+                        </label>
+                        <label for="paymentSurname" class="message-wrapper">
+                            <input
+                                type="text"
+                                name="paymentSurname"
+                                id="paymentSurname"
+                                placeholder="Ваша фамилия"
+                            />
+                            <div class="payment__marker">
+                                @@include('svg/square-success.html')
+                                @@include('svg/square-failure.html')
+                                <p class="message">Успешно</p>
+                            </div>
+                        </label>
+                        <label for="paymentMiddlename" class="message-wrapper">
+                            <input
+                                type="text"
+                                name="paymentMiddlename"
+                                id="paymentMiddlename"
+                                placeholder="Ваше отчество"
+                            />
+                            <div class="payment__marker">
+                                @@include('svg/square-success.html')
+                                @@include('svg/square-failure.html')
+                                <p class="message">Успешно</p>
+                            </div>
+                        </label>
+                        <label for="paymentTel" class="message-wrapper">
+                            <input
+                                type="tel"
+                                data-type="tel"
+                                name="paymentTel"
+                                id="paymentTel"
+                                placeholder="+7 (XXX) XXX XX XX"
+                            />
+                            <div class="payment__marker">
+                                @@include('svg/square-success.html')
+                                @@include('svg/square-failure.html')
+                                <p class="message">
+                                    Вы неправильно ввели номер телефона
+                                </p>
+                            </div>
+                        </label>
+                        <label for="paymentEmail" class="message-wrapper">
+                            <input
+                                type="text"
+                                data-type="email"
+                                name="paymentEmail"
+                                id="paymentEmail"
+                                placeholder="Ваш e-mail"
+                            />
+                            <div class="payment__marker">
+                                @@include('svg/square-success.html')
+                                @@include('svg/square-failure.html')
+                                <p class="message"></p>
+                            </div>
+                        </label>
+                        <label for="paymentRegion" class="message-wrapper">
+                            <input
+                                type="text"
+                                name="paymentRegion"
+                                id="paymentRegion"
+                                placeholder="Страна/ регион"
+                            />
+                            <div class="payment__marker">
+                                @@include('svg/square-success.html')
+                                @@include('svg/square-failure.html')
+                                <p class="message"></p>
+                            </div>
+                        </label>
+                        <label for="paymentAddress" class="message-wrapper">
+                            <input
+                                type="text"
+                                name="paymentAddress"
+                                id="paymentAddress"
+                                placeholder="Адрес доставки"
+                            />
+                            <div class="payment__marker">
+                                @@include('svg/square-success.html')
+                                @@include('svg/square-failure.html')
+                                <p class="message"></p>
+                            </div>
+                        </label>
+                        <p class="payment__desc">ПВЗ СДЭК</p>
+                        <div class="payment__map">
+                            <img src="/images/map.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+                <div class="payment__order">
+                    <h3>Ваш заказ</h3>
+                    <div class="payment__block">
+                        <div class="payment__item payment__item_product">
+                            <strong>Товар</strong>
+                            <div class="payment__list-item">
+                                <div class="payment__product">
+                                    <p>TOM FORD lost cherry</p>
+                                    <span>духи</span>
+                                </div>
+                                <span class="payment__cost">19 900 ₽</span>
+                            </div>
+                            <div class="payment__list-item">
+                                <div class="payment__product">
+                                    <p>TOM FORD lost cherry</p>
+                                    <span>духи</span>
+                                </div>
+                                <span class="payment__cost">19 900 ₽</span>
+                            </div>
+                            <div class="payment__list-item">
+                                <div class="payment__product">
+                                    <p>TOM FORD lost cherry</p>
+                                    <span>духи</span>
+                                </div>
+                                <span class="payment__cost">19 900 ₽</span>
+                            </div>
+                        </div>
+                        <div class="payment__item">
+                            <strong>Стоимость доставки</strong>
+                            <span class="payment__cost">300 ₽</span>
+                        </div>
+                        <div class="payment__item">
+                            <strong>Стоимость доставки</strong>
+                            <p class="payment__cost">
+                                <span>20%</span><span>-3 000 ₽</span>
+                            </p>
+                        </div>
+                        <div class="payment__total">
+                            <span>итог:</span>
+                            <strong>59 700 ₽</strong>
+                        </div>
+                    </div>
+                    <div class="payment__select">
+                        <h3>Выберите способ оплаты</h3>
+                        <div class="payment__radios">
+                            <label for="paymentSbp">
+                                <input
+                                    type="radio"
+                                    name="paymentType"
+                                    id="paymentSbp"
+                                    value="Оплатить через СБП"
+                                />
+                                <span class="checkmark"></span>
+                                СБП
+                            </label>
+                            <label for="paymentQr">
+                                <input
+                                    type="radio"
+                                    name="paymentType"
+                                    id="paymentQr"
+                                    value="Оплатить по QR-коду"
+                                    checked
+                                />
+                                <span class="checkmark"></span>
+                                Оплатить по QR-коду
+                            </label>
+                            <label for="paymentOnline">
+                                <input
+                                    type="radio"
+                                    name="paymentType"
+                                    id="paymentOnline"
+                                    value="Оплатить онлайн"
+                                />
+                                <span class="checkmark"></span>
+                                Оплата онлайн
+                            </label>
+                        </div>
+                    </div>
+                    <div class="payment__btns">
+                        <a href="/contacts.html" title="О доставке"
+                            >Как осуществляется доставка?</a
+                        >
+                        <button class="btn btn_black" type="submit">
+                            Оплатить по QR-коду
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <section class="qr-popup payment-popup overlay">
+        <div class="payment-popup__wrapper qr-popup__wrapper">
+            <div class="payment-popup__close">
+                <span></span>
+            </div>
+            <div class="payment-popup__content">
+                <h2>Оплатить по qr-коду</h2>
+                <p>Сканируйте QR-код для оплаты заказа</p>
+                <ol>
+                    <li>Наведите камеру телефона на изображение</li>
+                    <li>Подтвердите переход в Ваш банк</li>
+                    <li>Подтвердите оплату</li>
+                </ol>
+                <div class="qr-popup__qr">
+                    <img src="/images/qr.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="success-popup payment-popup overlay">
+        <div class="payment-popup__wrapper success-popup__wrapper">
+            <div class="payment-popup__close">
+                <span></span>
+            </div>
+            <div class="payment-popup__content">
+                <h2>Оплата успешно прошла</h2>
+                <div class="success-popup__links">
+                    <a href="/catalog.html" title="К каталогу"
+                        >Вернуться в каталог</a
+                    >
+                    <a href="/profile.html" title="К истории заказов"
+                        >Посмотреть историю заказов</a
+                    >
+                </div>
+                <img
+                    src="/images/bg/popup1.png"
+                    class="success-popup__bg"
+                    alt=""
+                />
+            </div>
+        </div>
+    </section>
+</main>

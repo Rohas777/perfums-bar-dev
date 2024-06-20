@@ -1,0 +1,15 @@
+<div class="swiper-slide">
+    <div class="offer__image">
+        <img @@img.src @@img.alt />
+    </div>
+    <div class="offer__content">
+        <div class="container">
+            <h1>@@title</h1>
+            <h2>@@subtitle</h2>
+            <a @@link.href class="btn btn_blur" title="Перейти в каталог">
+                <span>@@link.title</span>
+                @@include('svg/arrow.html', {"color": "white"})
+            </a>
+        </div>
+    </div>
+</div>

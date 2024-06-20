@@ -1,0 +1,136 @@
+<main>
+    <section class="breadcrumbs">
+        <div class="container">
+            <p><a href="/" title="На главную">Главная</a> / блог</p>
+        </div>
+    </section>
+    <section class="topics">
+        <div class="container">
+            <h2 class="title">Тематики</h2>
+            <div class="topics__wrapper">
+                <article class="topics__item">
+                    <a href="" class="topics__link"></a>
+                    <img src="/images/blog/topics1.png" alt="" />
+                    <div class="topics__text">
+                        <div class="topics__text-wrapper">
+                            <h2>Тенденции в мире парфюмерии</h2>
+                            <div class="topics__arrow">
+                                @@include('svg/arrow.html', {'color':
+                                '#000000'})
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="topics__item">
+                    <a href="" class="topics__link"></a>
+                    <img src="/images/blog/topics2.png" alt="" />
+                    <div class="topics__text">
+                        <div class="topics__text-wrapper">
+                            <h2>История парфюмерии</h2>
+                            <div class="topics__arrow">
+                                @@include('svg/arrow.html', {'color':
+                                '#000000'})
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="topics__item">
+                    <a href="" class="topics__link"></a>
+                    <img src="/images/blog/topics3.png" alt="" />
+                    <div class="topics__text">
+                        <div class="topics__text-wrapper">
+                            <h2>Советы по выбору аромата</h2>
+                            <div class="topics__arrow">
+                                @@include('svg/arrow.html', {'color':
+                                '#000000'})
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <article class="topics__item">
+                    <a href="" class="topics__link"></a>
+                    <img src="/images/blog/topics1.png" alt="" />
+                    <div class="topics__text">
+                        <div class="topics__text-wrapper">
+                            <h2>Тенденции в мире парфюмерии</h2>
+                            <div class="topics__arrow">
+                                @@include('svg/arrow.html', {'color':
+                                '#000000'})
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+    <div class="posts">
+        <div class="container">
+            <h2 class="title">Статьи</h2>
+        </div>
+        <div class="posts__wrapper">
+            <div class="container">
+                <article class="posts__item">
+                    <a href="/post.html" class="posts__link"></a>
+                    <div class="posts__image">
+                        <img src="/images/blog/posts1.png" alt="" />
+                    </div>
+                    <h2>Обзор текущих тенденций в мире парфюмерии</h2>
+                </article>
+                <article class="posts__item">
+                    <a href="/post.html" class="posts__link"></a>
+                    <div class="posts__image">
+                        <img src="/images/blog/posts2.png" alt="" />
+                    </div>
+                    <h2>Обзор текущих тенденций в мире парфюмерии</h2>
+                </article>
+                <article class="posts__item">
+                    <a href="/post.html" class="posts__link"></a>
+                    <div class="posts__image">
+                        <img src="/images/blog/posts3.png" alt="" />
+                    </div>
+                    <h2>Обзор текущих тенденций в мире парфюмерии</h2>
+                </article>
+                <article class="posts__item">
+                    <a href="/post.html" class="posts__link"></a>
+                    <div class="posts__image">
+                        <img src="/images/blog/posts1.png" alt="" />
+                    </div>
+                    <h2>Обзор текущих тенденций в мире парфюмерии</h2>
+                </article>
+                <article class="posts__item">
+                    <a href="/post.html" class="posts__link"></a>
+                    <div class="posts__image">
+                        <img src="/images/blog/posts2.png" alt="" />
+                    </div>
+                    <h2>Обзор текущих тенденций в мире парфюмерии</h2>
+                </article>
+                <article class="posts__item">
+                    <a href="/post.html" class="posts__link"></a>
+                    <div class="posts__image">
+                        <img src="/images/blog/posts3.png" alt="" />
+                    </div>
+                    <h2>Обзор текущих тенденций в мире парфюмерии</h2>
+                </article>
+            </div>
+        </div>
+        <div class="posts__pagination">
+            <a href="/" class="btn posts__nav posts__nav_prev">
+                @@include('svg/arrow-mini.html', {'left': true, 'bottom':
+                false})
+            </a>
+            <ul class="posts__pages">
+                <li class="active">1</li>
+                <li><a href="/">2</a></li>
+                <li><a href="/">3</a></li>
+                <li><a href="/">4</a></li>
+                <li><a href="/">5</a></li>
+                <li class="dots">...</li>
+                <li><a href="/">18</a></li>
+            </ul>
+            <a href="/" class="btn btn_black posts__nav posts__nav_next">
+                @@include('svg/arrow-mini.html', {'left': false, 'bottom':
+                false})
+            </a>
+        </div>
+    </div>
+</main>

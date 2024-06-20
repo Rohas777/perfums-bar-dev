@@ -1,0 +1,98 @@
+<article class="product-card-cart @@classes">
+    <div class="product-card-cart__header">
+        <button class="product-card-cart__fav fav-button @@isFav">
+            @@include("svg/favorite.html")
+        </button>
+        <a href="/product.html">
+            <div class="product-card-cart__marks">
+                @@if (bestseller === true) {
+                <div
+                    class="product-card-cart__mark product-card-cart__mark_bestseller"
+                >
+                    <img
+                        src="/images/assets/besttseller.png"
+                        alt="Бестселлер"
+                    />
+                    <span>B</span>
+                </div>
+                } @@if (newCollection === true) {
+                <div
+                    class="product-card-cart__mark product-card-cart__mark_new-collection"
+                >
+                    <span><span class="big-letter">N</span>ew coolection</span>
+                </div>
+                } @@if (sale !== false) {
+                <div
+                    class="product-card-cart__mark product-card-cart__mark_sale"
+                >
+                    <strong>@@sale</strong>
+                    <span>На этот товар действует скидка</span>
+                </div>
+                }
+            </div>
+            <img
+                src="@@image.main"
+                alt="@@name"
+                class="product-card-cart__img product-card-cart__img_main"
+            />
+            <img
+                src="@@image.origin"
+                alt="@@name original"
+                class="product-card-cart__img product-card-cart__img_original"
+            />
+        </a>
+    </div>
+    <div class="product-card-cart__body">
+        <a href="/product.html"><h3>@@name</h3></a>
+        <p class="product-card-cart__category">@@category</p>
+        <p class="product-card-cart__notes">
+            <span>Ноты:</span><span>@@notes</span>
+        </p>
+        <p class="product-card-cart__capacity">
+            <span>Объем:</span>
+            <button
+                class="product-card-cart__capacity-item product-capacity active @@capacity.8"
+            >
+                8 мл
+            </button>
+            <button
+                class="product-card-cart__capacity-item product-capacity @@capacity.20"
+            >
+                20 мл
+            </button>
+            <button
+                class="product-card-cart__capacity-item product-capacity @@capacity.30"
+            >
+                30 мл
+            </button>
+            <button
+                class="product-card-cart__capacity-item product-capacity @@capacity.50"
+            >
+                50 мл
+            </button>
+            <button
+                class="product-card-cart__capacity-item product-capacity @@capacity.100"
+            >
+                100 мл
+            </button>
+        </p>
+    </div>
+    <div class="product-card-cart__footer">
+        <div class="product-card-cart__btns">
+            <div
+                class="product-card-cart__counter counter"
+                data-max="@@maxCount"
+            >
+                <button class="counter-control counter-control_minus disabled">
+                    -
+                </button>
+                <span>@@count</span>
+                <button class="counter-control counter-control_plus">+</button>
+            </div>
+        </div>
+        <p class="product-card-cart__price">
+            <span>@@price.withSale ₽</span>
+            <strong>@@price.origin ₽</strong>
+        </p>
+    </div>
+</article>

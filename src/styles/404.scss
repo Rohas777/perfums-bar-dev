@@ -1,0 +1,71 @@
+@import "./assets/index";
+
+.not-found {
+    text-align: center;
+    overflow: hidden;
+
+    .container {
+        padding-top: 73px;
+        padding-bottom: 65px;
+    }
+
+    &__bg {
+        position: absolute;
+        z-index: 1;
+
+        &_1 {
+            bottom: 0;
+            left: -50px;
+            height: auto;
+            width: 41.1vw;
+            max-width: 591px;
+        }
+
+        &_2 {
+            bottom: 63px;
+            right: -50px;
+            height: auto;
+            width: 31.4vw;
+            max-width: 452px;
+            @include rotate(40deg);
+        }
+    }
+
+    h1 {
+        font-size: 300px;
+        position: relative;
+        z-index: 2;
+        text-transform: uppercase;
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+
+        span {
+            font-size: 270px;
+        }
+    }
+    h2 {
+        font-size: 32px;
+        font-family: $titleFont;
+        margin-bottom: 39px;
+        position: relative;
+        z-index: 2;
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 16px;
+        color: #4a4a4a;
+        margin-bottom: 59px;
+        position: relative;
+        z-index: 2;
+    }
+    .btn {
+        font-size: 20px;
+        padding: 19px 24px;
+        height: auto;
+        margin: 0px auto;
+        position: relative;
+        z-index: 2;
+    }
+}

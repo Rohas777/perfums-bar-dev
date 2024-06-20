@@ -1,0 +1,280 @@
+@import "./assets/index";
+
+@import "../components/product-card/product-card.scss";
+@import "../components/product-card-mini/product-card-mini.scss";
+
+.main {
+    border-bottom: 1px solid #6f6f6f;
+    overflow: hidden;
+    margin-bottom: 100px;
+
+    .container {
+        @include flexbox();
+    }
+
+    &__profile {
+        flex-shrink: 0;
+        flex-basis: 350px;
+        border-right: 1px solid #6f6f6f;
+        padding-bottom: 42px;
+
+        .title {
+            margin-bottom: 43px;
+        }
+    }
+
+    &__profile-wrapper {
+        background-color: #fff7f6;
+        padding: 27px 10px 74px 27px;
+        margin-right: 97px;
+        font-family: $subtitleFont;
+        position: relative;
+    }
+
+    &__profile-name {
+        @include flexbox();
+        align-items: center;
+        gap: 7px;
+        margin-bottom: 35px;
+
+        &::before {
+            content: "";
+            width: 21px;
+            height: 21px;
+            background-color: #000;
+            border-radius: 50%;
+        }
+    }
+
+    &__profile-item {
+        margin-bottom: 15px;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        span:first-of-type {
+            color: #6f6f6f;
+            font-size: 14px;
+            font-weight: 300;
+            margin-bottom: 5px;
+            display: block;
+        }
+        p {
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        &_sex {
+            @include flexbox();
+            align-items: center;
+            gap: 13px;
+
+            span {
+                margin-bottom: 0;
+            }
+
+            span:last-of-type {
+                font-family: $mainFont;
+                color: #fff;
+                font-size: 20px;
+                padding: 2px 17px;
+                background-color: #c6c6c6;
+                border-radius: 15px;
+            }
+        }
+
+        &_address {
+            p {
+                font-size: 16px;
+            }
+
+            button {
+                margin-top: 20px;
+                color: #6f6f6f;
+                font-size: 14px;
+                text-decoration: underline;
+                @include anim(all, 0.3s, ease-out, 0s);
+
+                &:hover {
+                    color: $red;
+                }
+            }
+        }
+    }
+
+    &__profile-edit {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+
+        path,
+        svg {
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+
+        &:hover {
+            svg {
+                @include scale(1.2);
+            }
+            path {
+                fill: $red;
+            }
+        }
+    }
+
+    &__history {
+        padding: 128px 0 42px 45px;
+    }
+
+    &__history-head {
+        margin-bottom: 43px;
+        @include flexbox();
+        justify-content: space-between;
+        text-transform: uppercase;
+        margin-bottom: 43px;
+        max-width: 945px;
+    }
+
+    .swiper-nav {
+        width: 140px;
+        @include flexbox();
+        justify-content: space-between;
+        align-items: center;
+    }
+    .swiper-nav-item {
+        position: static;
+        margin-top: 0;
+        width: 45px;
+        height: 45px;
+        border: 2px solid $black;
+
+        svg {
+            width: 8px;
+            height: 16px;
+        }
+
+        path {
+            stroke-width: 3px;
+        }
+
+        &:hover {
+            background-color: $red;
+            border-color: $red;
+        }
+
+        svg {
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+    }
+
+    .swiper-button-prev {
+        &:hover {
+            svg {
+                @include tr_rot(-5px, 0, 180deg);
+            }
+        }
+    }
+    .swiper-button-next {
+        background-color: $black;
+
+        path {
+            stroke: #ffffff;
+        }
+        &:hover {
+            svg {
+                @include tr(5px, 0);
+            }
+        }
+    }
+    &__history-slider {
+    }
+    .swiper {
+        width: 1340px;
+    }
+    .swiper-wrapper {
+    }
+}
+.favs {
+    .title {
+        margin-bottom: 70px;
+    }
+    &__wrapper {
+        @include grid();
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+        row-gap: 70px;
+        margin-bottom: 100px;
+    }
+
+    &__pagination {
+        margin-bottom: 155px;
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        gap: 80px;
+    }
+
+    &__pages {
+        @include flexbox();
+        align-items: end;
+        gap: 15px;
+
+        li {
+            color: #6f6f6f;
+            font-size: 16px;
+            @include anim(all, 0.3s, ease-out, 0s);
+            line-height: 70%;
+            user-select: none;
+
+            a {
+                line-height: 70%;
+            }
+
+            &:hover:not(.active, .dots) {
+                color: $red;
+            }
+
+            &.active {
+                margin-right: 4px;
+                color: #000000;
+                font-weight: 600;
+                font-size: 32px;
+            }
+        }
+    }
+
+    &__nav {
+        padding: 0;
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+
+        svg {
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+
+        &_prev {
+            border: 1px solid #000000;
+
+            &:hover {
+                svg {
+                    @include tr_rot(-5px, 0, 180deg);
+                }
+            }
+        }
+        &_next {
+            path {
+                stroke: #ffffff;
+            }
+            &:hover {
+                svg {
+                    @include tr(5px, 0);
+                }
+            }
+        }
+    }
+}

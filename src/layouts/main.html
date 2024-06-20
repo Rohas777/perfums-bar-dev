@@ -1,0 +1,670 @@
+<main>
+    <section class="offer">
+        <div class="offer__slider swiper">
+            <div class="swiper-wrapper">
+                @@loop('components/offer-slide/offer-slide.html',
+                '../data/offer-slider.json')
+            </div>
+            <div class="swiper-nav">
+                <div class="container">
+                    <div class="swiper-nav-item swiper-button-prev">
+                        @@include('svg/arrow-mini.html', {'left': true,
+                        'bottom': false})
+                    </div>
+                    <div class="swiper-nav-item swiper-button-next">
+                        @@include('svg/arrow-mini.html', {'left': false,
+                        'bottom': false})
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+        <div class="offer__advantages">
+            <div class="container">
+                <div class="swiper offer-advantages__slider">
+                    <div class="swiper-wrapper">
+                        @@loop('components/offer-advantage/offer-advantage.html',
+                        '../data/offer-advantages.json')
+                    </div>
+                    <div class="swiper-button-nav swiper-button-prev">
+                        <svg
+                            width="10"
+                            height="17"
+                            viewBox="0 0 10 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M0.258435 16.2732C-0.0548196 15.9984 -0.0832973 15.5683 0.173002 15.2652L0.258435 15.1784L7.86941 8.5L0.258435 1.82163C-0.0548196 1.54677 -0.0832973 1.11667 0.173002 0.813588L0.258435 0.726757C0.57169 0.4519 1.06188 0.426914 1.40731 0.651796L1.50627 0.726757L9.74156 7.95256C10.0548 8.22742 10.0833 8.65752 9.827 8.96061L9.74156 9.04744L1.50627 16.2732C1.16169 16.5756 0.603015 16.5756 0.258435 16.2732Z"
+                                fill="#4A4A4A"
+                            />
+                        </svg>
+                    </div>
+                    <div class="swiper-button-nav swiper-button-next">
+                        <svg
+                            width="10"
+                            height="17"
+                            viewBox="0 0 10 17"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M0.258435 16.2732C-0.0548196 15.9984 -0.0832973 15.5683 0.173002 15.2652L0.258435 15.1784L7.86941 8.5L0.258435 1.82163C-0.0548196 1.54677 -0.0832973 1.11667 0.173002 0.813588L0.258435 0.726757C0.57169 0.4519 1.06188 0.426914 1.40731 0.651796L1.50627 0.726757L9.74156 7.95256C10.0548 8.22742 10.0833 8.65752 9.827 8.96061L9.74156 9.04744L1.50627 16.2732C1.16169 16.5756 0.603015 16.5756 0.258435 16.2732Z"
+                                fill="#4A4A4A"
+                            />
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="offer-advantage__full">
+        <div class="container">
+            <div class="offer-advantage__close">
+                <span></span>
+            </div>
+            <div class="offer-advantage__content"></div>
+        </div>
+    </section>
+    <section class="categories">
+        <div class="container">
+            <h2 class="title">Категории товаров</h2>
+            <div class="categories__wrapper">
+                @@loop('components/category-card/category-card.html',
+                '../data/category-cards.json')
+            </div>
+            <div class="swiper categories__slider">
+                <div class="swiper-wrapper">
+                    @@loop('components/category-card-swiper/category-card-swiper.html',
+                    '../data/category-cards-swiper.json')
+                </div>
+            </div>
+            <a href="/catalog.html" class="btn btn_black categories__btn">
+                <span>Смотреть каталог</span>
+            </a>
+        </div>
+    </section>
+    <section class="advantages">
+        <div class="container">
+            <h2 class="title">Почему стоит выбрать нас</h2>
+            <ul>
+                <li>
+                    <h3><span>100% </span> ВЫСОКОЕ КАЧЕСТВО СЫРЬЯ</h3>
+                    <p>
+                        Наше сырье поставляется из Франции, Швейцарии и других
+                        лидирующих стран, обеспечивая непревзойденное качество.
+                    </p>
+                </li>
+                <li>
+                    <h3><span>100% </span> Сертифицированная продукция</h3>
+                    <p>
+                        Вся наша парфюмерия имеет сертификаты качества и
+                        проходит лабораторные испытания.
+                    </p>
+                </li>
+                <li>
+                    <h3><span> 95% </span> Доверие профессионалам</h3>
+                    <p>
+                        С 2007 года бренд "Perfums Bar" является топовым игроком
+                        в индустрии парфюмерии, заслужив доверие профессионалов
+                        и ценителей ароматов.
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section class="utp1">
+        <div class="utp1__bg">
+            <img
+                src="/images/bg/utp.jpg"
+                alt="ПРИСОЕДИНИСЬ К НАМ И ПОЛУЧИ УНИКАЛЬНЫЕ БОНУСЫ"
+            />
+        </div>
+        <div class="container">
+            <h2 class="title">ПРИСОЕДИНИСЬ К НАМ И ПОЛУЧИ УНИКАЛЬНЫЕ БОНУСЫ</h2>
+            <div class="utp1__wrapper">
+                <div class="utp1__text">
+                    <p>
+                        Получи доступ к эксклюзивным предложениям, закрытым
+                        распродажам и специальным скидкам на важные события в
+                        твоей жизни!
+                    </p>
+                    <p>
+                        К тому же, будь в курсе особых программ лояльности для
+                        наших постоянных клиентов.
+                    </p>
+                    <p>
+                        Присоединяйся к нам сегодня, и мы позаботимся о твоем
+                        парфюмерном гардеробе, помогая сэкономить твои деньги!
+                    </p>
+                </div>
+                <button class="btn auth-popup-open">
+                    <span>Зарегистрироваться</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="services">
+        <div class="container">
+            <h2 class="title">Дополнительные услуги</h2>
+            <div class="services__wrapper">
+                <div class="services__card">
+                    <a
+                        href="/"
+                        title="Флаконы в розницу и оптом"
+                        class="services__link"
+                    ></a>
+                    <img
+                        src="/images/services/1.png"
+                        alt="Флаконы в розницу и оптом"
+                    />
+                    <div class="services__text">
+                        <h3>Флаконы в розницу и оптом</h3>
+                        <div class="services__desc">
+                            <p>
+                                Независимо от вашего запроса - индивидуальная
+                                покупка или оптовая партия, мы предлагаем
+                                широкий выбор флаконов, чтобы удовлетворить
+                                любые потребности
+                            </p>
+                        </div>
+                    </div>
+                    <a
+                        href="/"
+                        title="Флаконы в розницу и оптом"
+                        class="btn btn_black"
+                    >
+                        <span>Смотреть ещё</span>
+                    </a>
+                </div>
+                <div class="services__card">
+                    <a
+                        href="/"
+                        title="Брендирование флаконов"
+                        class="services__link"
+                    ></a>
+                    <img
+                        src="/images/services/2.png"
+                        alt="Брендирование флаконов"
+                    />
+                    <div class="services__text">
+                        <h3>Брендирование флаконов</h3>
+                        <div class="services__desc">
+                            <p>
+                                Выбирайте стиль и выразительность для вашего
+                                аромата с нашими услугами по брендированию
+                                флаконов. Мы создаем уникальные дизайны как для
+                                себя, так и для наших партнеров.
+                            </p>
+                            <p>
+                                Позвольте нам создать что-то особенное и для
+                                вас!
+                            </p>
+                        </div>
+                    </div>
+                    <a
+                        href="/"
+                        title="Брендирование флаконов"
+                        class="btn btn_black"
+                    >
+                        <span>Смотреть ещё</span>
+                    </a>
+                </div>
+                <div class="services__card">
+                    <a href="/" title="Партнёрство" class="services__link"></a>
+                    <img src="/images/services/3.png" alt="Партнёрство" />
+                    <div class="services__text">
+                        <h3>Партнёрство</h3>
+                        <div class="services__desc">
+                            <p>
+                                Присоединяйтесь к нашей успешной сети
+                                дистрибьюторов, наш бренд уже представлен
+                                десятками партнеров в различных странах СНГ, и
+                                более 200 магазинов готовы расширить ваш бизнес
+                            </p>
+                            <p>Сделайте следующий шаг к успеху с нами!</p>
+                        </div>
+                    </div>
+                    <a href="/" title="Партнёрство" class="btn btn_black">
+                        <span>Смотреть ещё</span>
+                    </a>
+                </div>
+            </div>
+            <div class="services__slider swiper">
+                <div class="swiper-wrapper">
+                    <div class="services__card swiper-slide">
+                        <a
+                            href="/"
+                            title="Флаконы в розницу и оптом"
+                            class="services__link"
+                        ></a>
+                        <img
+                            src="/images/services/1.png"
+                            alt="Флаконы в розницу и оптом"
+                        />
+                        <div class="services__text">
+                            <h3>Флаконы в розницу и оптом</h3>
+                            <div class="services__desc">
+                                <p>
+                                    Независимо от вашего запроса -
+                                    индивидуальная покупка или оптовая партия,
+                                    мы предлагаем широкий выбор флаконов, чтобы
+                                    удовлетворить любые потребности
+                                </p>
+                            </div>
+                        </div>
+                        <a
+                            href="/"
+                            title="Флаконы в розницу и оптом"
+                            class="btn btn_black"
+                        >
+                            <span>Смотреть ещё</span>
+                        </a>
+                    </div>
+                    <div class="services__card swiper-slide">
+                        <a
+                            href="/"
+                            title="Брендирование флаконов"
+                            class="services__link"
+                        ></a>
+                        <img
+                            src="/images/services/2.png"
+                            alt="Брендирование флаконов"
+                        />
+                        <div class="services__text">
+                            <h3>Брендирование флаконов</h3>
+                            <div class="services__desc">
+                                <p>
+                                    Выбирайте стиль и выразительность для вашего
+                                    аромата с нашими услугами по брендированию
+                                    флаконов. Мы создаем уникальные дизайны как
+                                    для себя, так и для наших партнеров.
+                                </p>
+                                <p>
+                                    Позвольте нам создать что-то особенное и для
+                                    вас!
+                                </p>
+                            </div>
+                        </div>
+                        <a
+                            href="/"
+                            title="Брендирование флаконов"
+                            class="btn btn_black"
+                        >
+                            <span>Смотреть ещё</span>
+                        </a>
+                    </div>
+                    <div class="services__card swiper-slide">
+                        <a
+                            href="/"
+                            title="Партнёрство"
+                            class="services__link"
+                        ></a>
+                        <img src="/images/services/3.png" alt="Партнёрство" />
+                        <div class="services__text">
+                            <h3>Партнёрство</h3>
+                            <div class="services__desc">
+                                <p>
+                                    Присоединяйтесь к нашей успешной сети
+                                    дистрибьюторов, наш бренд уже представлен
+                                    десятками партнеров в различных странах СНГ,
+                                    и более 200 магазинов готовы расширить ваш
+                                    бизнес
+                                </p>
+                                <p>Сделайте следующий шаг к успеху с нами!</p>
+                            </div>
+                        </div>
+                        <a href="/" title="Партнёрство" class="btn btn_black">
+                            <span>Смотреть ещё</span>
+                        </a>
+                    </div>
+                    <div class="services__card swiper-slide">
+                        <a
+                            href="/"
+                            title="Флаконы в розницу и оптом"
+                            class="services__link"
+                        ></a>
+                        <img
+                            src="/images/services/1.png"
+                            alt="Флаконы в розницу и оптом"
+                        />
+                        <div class="services__text">
+                            <h3>Флаконы в розницу и оптом</h3>
+                            <div class="services__desc">
+                                <p>
+                                    Независимо от вашего запроса -
+                                    индивидуальная покупка или оптовая партия,
+                                    мы предлагаем широкий выбор флаконов, чтобы
+                                    удовлетворить любые потребности
+                                </p>
+                            </div>
+                        </div>
+                        <a
+                            href="/"
+                            title="Флаконы в розницу и оптом"
+                            class="btn btn_black"
+                        >
+                            <span>Смотреть ещё</span>
+                        </a>
+                    </div>
+                    <div class="services__card swiper-slide">
+                        <a
+                            href="/"
+                            title="Брендирование флаконов"
+                            class="services__link"
+                        ></a>
+                        <img
+                            src="/images/services/2.png"
+                            alt="Брендирование флаконов"
+                        />
+                        <div class="services__text">
+                            <h3>Брендирование флаконов</h3>
+                            <div class="services__desc">
+                                <p>
+                                    Выбирайте стиль и выразительность для вашего
+                                    аромата с нашими услугами по брендированию
+                                    флаконов. Мы создаем уникальные дизайны как
+                                    для себя, так и для наших партнеров.
+                                </p>
+                                <p>
+                                    Позвольте нам создать что-то особенное и для
+                                    вас!
+                                </p>
+                            </div>
+                        </div>
+                        <a
+                            href="/"
+                            title="Брендирование флаконов"
+                            class="btn btn_black"
+                        >
+                            <span>Смотреть ещё</span>
+                        </a>
+                    </div>
+                    <div class="services__card swiper-slide">
+                        <a
+                            href="/"
+                            title="Партнёрство"
+                            class="services__link"
+                        ></a>
+                        <img src="/images/services/3.png" alt="Партнёрство" />
+                        <div class="services__text">
+                            <h3>Партнёрство</h3>
+                            <div class="services__desc">
+                                <p>
+                                    Присоединяйтесь к нашей успешной сети
+                                    дистрибьюторов, наш бренд уже представлен
+                                    десятками партнеров в различных странах СНГ,
+                                    и более 200 магазинов готовы расширить ваш
+                                    бизнес
+                                </p>
+                                <p>Сделайте следующий шаг к успеху с нами!</p>
+                            </div>
+                        </div>
+                        <a href="/" title="Партнёрство" class="btn btn_black">
+                            <span>Смотреть ещё</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section class="about">
+        <div class="container">
+            <h2 class="title">О нас</h2>
+            <div class="about__wrapper">
+                <div class="about__img">
+                    <img src="/images/about/1.jpg" alt="О нас" />
+                </div>
+                <div class="about__text">
+                    <p>
+                        <span>Perfums Bar</span> - это эволюция парфюмерии
+                        нового поколения, воплощающая в себе наследие великой
+                        парфюмерной истории. Мы стремимся к совершенству,
+                        отбирая только лучшие ингредиенты от престижных
+                        парфюмерных домов Франции и Швейцарии. Наши ароматы
+                        создаются на базе передовых инноваций и богатого опыта,
+                        чтобы подарить вам самые изысканные парфюмерные
+                        композиции.
+                    </p>
+                    <p>
+                        <strong>Наша миссия</strong> - предоставить нашим
+                        клиентам роскошь, обеспечивая высочайшее качество
+                        продукции по доступным ценам.
+                    </p>
+                    <p>
+                        <strong>Perfums Bar</strong> представляет более 400
+                        уникальных ароматов и более 200 брендовых магазинов, и
+                        это число продолжает расти. Наша уверенность и успех
+                        говорят о высоком качестве продукции, подтвержденном
+                        взаимовыгодным партнерством
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="faq">
+        <div class="faq__bg">
+            <img src="/images/bg/faq.jpg" alt="Частые вопросы" />
+        </div>
+        <div class="container">
+            <h2 class="title">Частые вопросы</h2>
+            <div class="faq__wrapper">
+                <ul>
+                    <li class="faq__question active">
+                        Что такое номерная парфюмерия?
+                    </li>
+                    <div class="faq__answer-mobile-wrapper">
+                        <div class="faq__answer-mobile">
+                            <p>
+                                Номерная парфюмерия предлагает качественные
+                                ароматы по доступным ценам. Номера заменяют
+                                имена, сохраняя превосходное качество и
+                                эксклюзивность.
+                            </p>
+                            <p>
+                                Номерная парфюмерия предлагает качественные
+                                ароматы по доступным ценам. Номера заменяют
+                                имена, сохраняя превосходное качество и
+                                эксклюзивность.
+                            </p>
+                        </div>
+                    </div>
+                    <li class="faq__question">
+                        Почему у ароматов указаны цифры?
+                    </li>
+                    <div class="faq__answer-mobile-wrapper">
+                        <div class="faq__answer-mobile"></div>
+                    </div>
+                    <li class="faq__question">
+                        Почему вы указываете ароматы других брендов?
+                    </li>
+                    <div class="faq__answer-mobile-wrapper">
+                        <div class="faq__answer-mobile"></div>
+                    </div>
+                    <li class="faq__question">Как осуществляется доставка?</li>
+                    <div class="faq__answer-mobile-wrapper">
+                        <div class="faq__answer-mobile"></div>
+                    </div>
+                    <li class="faq__question">Как стать партнером?</li>
+                    <div class="faq__answer-mobile-wrapper">
+                        <div class="faq__answer-mobile"></div>
+                    </div>
+                    <li class="faq__question">Как сделать оптовый заказ?</li>
+                    <div class="faq__answer-mobile-wrapper">
+                        <div class="faq__answer-mobile"></div>
+                    </div>
+                </ul>
+                <div class="faq__answer-wrapper">
+                    <div class="faq__answer" data-faq-index="0">
+                        <p>
+                            Номерная парфюмерия предлагает качественные ароматы
+                            по доступным ценам. Номера заменяют имена, сохраняя
+                            превосходное качество и эксклюзивность.
+                        </p>
+                        <p>
+                            Номерная парфюмерия предлагает качественные ароматы
+                            по доступным ценам. Номера заменяют имена, сохраняя
+                            превосходное качество и эксклюзивность.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="utp2">
+        <div class="utp2__bg">
+            <img src="/images/bg/utp2.jpg" alt="Остались вопросы?" />
+        </div>
+        <div class="container">
+            <div class="utp2__follow">
+                <h2 class="title">Подписаться</h2>
+                <form id="follow" class="message-wrapper">
+                    <p class="utp2__desc">
+                        Акции, промокоды и новинки каждую неделю
+                    </p>
+                    <div class="utp2__follow-wrapper">
+                        <input
+                            type="text"
+                            data-type="email"
+                            name="follow-email"
+                            id="follow-email"
+                            placeholder="Ваш e-mail"
+                        />
+                        <button type="submit">
+                            @@include('svg/arrow.html', {"color": "white"})
+                        </button>
+                    </div>
+                    <p class="message"></p>
+                </form>
+            </div>
+            <div class="utp2__feedback">
+                <h2 class="title">Остались вопросы?</h2>
+                <form id="feedback">
+                    <p class="utp2__desc">
+                        Оставьте свой вопрос и мы ответим в течении 10 минут
+                    </p>
+                    <div class="message-wrapper">
+                        <div class="utp2__feedback-wrapper">
+                            <input
+                                type="text"
+                                name="feedback-name"
+                                id="feedback-name"
+                                placeholder="Ваше имя"
+                            />
+                            <input
+                                type="tel"
+                                name="feedback-tel"
+                                id="feedback-tel"
+                                data-type="tel"
+                                placeholder="+7 (XXX) XXX XX XX"
+                            />
+                        </div>
+                        <p class="message"></p>
+                    </div>
+                    <button type="submit" class="btn">
+                        <span>Оставить заявку</span>
+                        @@include('svg/arrow.html', {"color": "black"})
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <section id="certs" class="certs">
+        <div class="container">
+            <div class="certs__text">
+                <h2 class="title">Сертификаты</h2>
+                <div class="certs__desc">
+                    <ul>
+                        <strong>Наши гарантии качества: </strong>
+                        <li>сертификаты соответствия,</li>
+                        <li>ЕАЭС,</li>
+                        <li>
+                            Честного знака и декларации соответствия для духов и
+                            флаконов.
+                        </li>
+                    </ul>
+                    <p>
+                        Мы также являемся членами Ассоциации автоматической
+                        идентификации, подтверждая нашу приверженность качеству
+                        и безопасности продукции.
+                    </p>
+                </div>
+            </div>
+            <div class="certs__wrapper">
+                <div class="certs__slider swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a
+                                href="/docs/4670094609999_cert-1.pdf"
+                                data-fancybox
+                                data-type="pdf"
+                            >
+                                <img src="/images/certs/r1.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a
+                                href="/docs/Декларация соответствия Perfums Bar.pdf"
+                                data-fancybox
+                                data-type="pdf"
+                            >
+                                <img src="/images/certs/r2.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a
+                                href="/docs/Декларация_соответствия_от_10_11_2021.pdf"
+                                data-fancybox
+                                data-type="pdf"
+                            >
+                                <img src="/images/certs/r3.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a
+                                href="/docs/4670094609999_cert-1.pdf"
+                                data-fancybox
+                                data-type="pdf"
+                            >
+                                <img src="/images/certs/r1.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a
+                                href="/docs/Декларация соответствия Perfums Bar.pdf"
+                                data-fancybox
+                                data-type="pdf"
+                            >
+                                <img src="/images/certs/r2.png" alt="" />
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a
+                                href="/docs/Декларация_соответствия_от_10_11_2021.pdf"
+                                data-fancybox
+                                data-type="pdf"
+                            >
+                                <img src="/images/certs/r3.png" alt="" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="certs__nav swiper-nav">
+                    <div class="swiper-nav-item swiper-button-prev">
+                        @@include('svg/arrow-mini.html', {'left': true,
+                        'bottom': false})
+                    </div>
+                    <div class="swiper-nav-item swiper-button-next">
+                        @@include('svg/arrow-mini.html', {'left': false,
+                        'bottom': false})
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="section-separator"></div>
+    @@include('components/reviews-block/reviews-block.html')
+    @@include('components/auth-popup/auth-popup.html')
+</main>

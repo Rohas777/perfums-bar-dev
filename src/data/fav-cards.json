@@ -1,0 +1,74 @@
+[
+    {
+        "image": {
+            "main": "/images/catalog/thumb.png",
+            "origin": "/images/catalog/tom-ford-lost-cherry.png"
+        },
+        "name": "TOM FORD lost cherry",
+        "category": "Духи",
+        "notes": "табачный лист и специи",
+        "capacity": {
+            "8": "",
+            "20": "",
+            "30": "",
+            "50": "",
+            "100": "not-avialable"
+        },
+        "price": {
+            "origin": "23 500",
+            "withSale": "19 900"
+        },
+        "newCollection": true,
+        "sale": false,
+        "bestseller": false,
+        "isFav": "added"
+    },
+    {
+        "image": {
+            "main": "/images/catalog/thumb.png",
+            "origin": "/images/catalog/tom-ford-bitter-peach.png"
+        },
+        "name": "TOM FORD bitter peach",
+        "category": "Духи",
+        "notes": "табачный лист и специи",
+        "capacity": {
+            "8": "",
+            "20": "",
+            "30": "",
+            "50": "",
+            "100": "not-avialable"
+        },
+        "price": {
+            "origin": "23 500",
+            "withSale": "19 900"
+        },
+        "newCollection": false,
+        "sale": "20%",
+        "bestseller": false,
+        "isFav": "added"
+    },
+    {
+        "image": {
+            "main": "/images/catalog/thumb.png",
+            "origin": "/images/catalog/tom-ford-lost-cherry.png"
+        },
+        "name": "TOM FORD lost cherry",
+        "category": "Духи",
+        "notes": "табачный лист и специи",
+        "capacity": {
+            "8": "",
+            "20": "not-avialable",
+            "30": "not-avialable",
+            "50": "",
+            "100": "not-avialable"
+        },
+        "price": {
+            "origin": "19 900",
+            "withSale": "19 900"
+        },
+        "newCollection": false,
+        "sale": false,
+        "bestseller": true,
+        "isFav": "added"
+    }
+]

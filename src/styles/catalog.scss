@@ -1,0 +1,686 @@
+@import "./assets/index";
+
+@import "../components/product-card/product-card.scss";
+@import "../components/product-card-mini/product-card-mini.scss";
+@import "../components/product-recommendations/product-recommendations.scss";
+
+.menu {
+    padding-bottom: 140px;
+    @media only screen and (max-width: 992px) {
+        padding-bottom: 100px;
+    }
+    @media only screen and (max-width: 600px) {
+        padding-bottom: 140px;
+    }
+
+    .container {
+        @include flexbox();
+        align-items: end;
+        justify-content: space-between;
+        @media only screen and (max-width: 992px) {
+            align-items: center;
+        }
+    }
+
+    &__selector {
+        position: absolute;
+        height: 100%;
+        top: 33px;
+        left: 50%;
+        @include tr(-50%, 0);
+        @include flexbox();
+        flex-direction: column;
+        gap: 35px;
+        @media only screen and (max-width: 1260px) {
+            top: 70px;
+        }
+
+        button {
+            @include anim(all, 0.3s, ease-out, 0s);
+            color: #6f6f6f;
+            border: 1px solid #c6c6c6;
+            background-color: transparent;
+
+            &.active {
+                color: #ffffff;
+                background-color: #000000;
+                border-color: #000000;
+                cursor: default;
+            }
+            @media (hover: hover) {
+                &:hover:not(.active) {
+                    color: #ffffff;
+                    background-color: $red;
+                    border-color: $red;
+                }
+            }
+
+            &:active:not(.active) {
+                color: #ffffff;
+                background-color: $red;
+                border-color: $red;
+            }
+        }
+    }
+
+    &__categories {
+        @include flexbox();
+        gap: 50px;
+
+        @media only screen and (max-width: 992px) {
+            gap: 10px;
+        }
+
+        button {
+            padding: 4px 20px;
+            font-size: 16px;
+            flex: 1;
+            @media only screen and (max-width: 992px) {
+                padding: 5px 10px;
+                font-size: 13px;
+            }
+        }
+    }
+
+    &__buttons {
+        @include flexbox();
+        gap: 50px;
+        @include anim(all, 0.3s, ease-out, 0.8s);
+        @media only screen and (max-width: 992px) {
+            gap: 15px;
+        }
+
+        &.search-opened {
+            gap: 0;
+            @include anim(all, 0.3s, ease-out, 0s);
+
+            .menu__filter {
+                border-color: transparent;
+                width: 0;
+                opacity: 0;
+                @include anim(all, 0.3s, ease-out, 0s);
+            }
+        }
+    }
+    &__button {
+        width: 50px;
+        height: 50px;
+        @include flexbox();
+        justify-content: center;
+        border: 1px solid #000000;
+        border-radius: 50%;
+        background-color: transparent;
+        position: relative;
+        @media only screen and (max-width: 992px) {
+            height: 30px;
+            width: 30px;
+        }
+
+        .search,
+        svg {
+            z-index: 1;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            top: -2px;
+            left: -2px;
+            z-index: 0;
+            border-radius: 50%;
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+    }
+
+    &__search {
+        position: relative;
+        @include anim(all, 0.3s, ease-out, 0.8s);
+
+        &.active {
+            border-color: transparent;
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+    }
+
+    &__filter {
+        align-items: center;
+        @include anim(all, 0.3s, ease-out, 0.8s);
+
+        svg {
+            @media only screen and (max-width: 992px) {
+                width: 15px;
+                height: 15px;
+            }
+        }
+
+        path {
+            @include anim(all, 0.3s, ease-out, 0s);
+            transform-origin: center;
+        }
+        @media (hover: hover) {
+            &:hover {
+                &::after {
+                    background-color: $red;
+                }
+
+                path {
+                    fill: #ffffff;
+                    @include scale(0.88);
+                }
+            }
+        }
+
+        &:active,
+        &.active {
+            &::after {
+                background-color: $red;
+            }
+
+            path {
+                fill: #ffffff;
+                @include scale(0.88);
+            }
+        }
+    }
+}
+
+.catalog {
+    &__wrapper {
+        @include grid();
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+        row-gap: 70px;
+        margin-bottom: 100px;
+        @media only screen and (max-width: 1260px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+        @media only screen and (max-width: 992px) {
+            margin-bottom: 50px;
+        }
+        @media only screen and (max-width: 768px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        @media only screen and (max-width: 600px) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        @media only screen and (max-width: 370px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    &__pagination {
+        margin-bottom: 120px;
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        gap: 80px;
+        @media only screen and (max-width: 992px) {
+            margin-bottom: 60px;
+        }
+        @media only screen and (max-width: 768px) {
+            gap: 35px;
+        }
+    }
+
+    &__pages {
+        @include flexbox();
+        align-items: end;
+        gap: 15px;
+        @media only screen and (max-width: 768px) {
+            display: none;
+        }
+
+        li {
+            color: #6f6f6f;
+            font-size: 16px;
+            @include anim(all, 0.3s, ease-out, 0s);
+            line-height: 70%;
+            user-select: none;
+
+            a {
+                line-height: 70%;
+            }
+            @media (hover: hover) {
+                &:hover:not(.active, .dots) {
+                    color: $red;
+                }
+            }
+
+            &:active:not(.active, .dots) {
+                color: $red;
+            }
+
+            &.active {
+                margin-right: 4px;
+                color: #000000;
+                font-weight: 600;
+                font-size: 32px;
+            }
+        }
+    }
+
+    &__nav {
+        padding: 0;
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+
+        svg {
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+
+        &_prev {
+            border: 1px solid #000000;
+            @media (hover: hover) {
+                &:hover {
+                    svg {
+                        @include tr_rot(-5px, 0, 180deg);
+                    }
+                }
+            }
+
+            &:active {
+                svg {
+                    @include tr_rot(-5px, 0, 180deg);
+                }
+            }
+        }
+        &_next {
+            path {
+                stroke: #ffffff;
+            }
+            @media (hover: hover) {
+                &:hover {
+                    svg {
+                        @include tr(5px, 0);
+                    }
+                }
+            }
+
+            &:active {
+                svg {
+                    @include tr(5px, 0);
+                }
+            }
+        }
+    }
+}
+
+.filter {
+    width: 444px;
+    padding: 75px 35px 30px 30px;
+    border: 1px solid #000000;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1001;
+    background-color: #ffffff;
+    overflow: auto;
+    max-height: 100vh;
+    @include tr(120%, 0);
+    @include anim(all, 0.3s, cubic-bezier(0.175, 0.885, 0.32, 1.275), 0s);
+    @media only screen and (max-width: 476px) {
+        width: 95%;
+    }
+
+    &.opened {
+        @include tr(0, 0);
+    }
+
+    &__close {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        top: 23px;
+        right: 35px;
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #6f6f6f;
+        border-radius: 50%;
+        cursor: pointer;
+        @include anim(all, 0.3s, ease-out, 0s);
+        @media only screen and (max-width: 476px) {
+            width: 30px;
+            height: 30px;
+
+            svg {
+                width: 11px;
+                height: 11px;
+            }
+        }
+
+        path {
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+        @media (hover: hover) {
+            &:hover {
+                background-color: $red;
+                border-color: $red;
+
+                path {
+                    fill: #ffffff;
+                }
+            }
+        }
+
+        &:active {
+            background-color: $red;
+            border-color: $red;
+
+            path {
+                fill: #ffffff;
+            }
+        }
+    }
+
+    &__form {
+    }
+
+    &__chunk {
+        margin-bottom: 20px;
+
+        &:not(:first-child) {
+            .filter__head-wrapper {
+                cursor: pointer;
+            }
+        }
+    }
+
+    &__head {
+        @include flexbox();
+        align-items: center;
+        gap: 35px;
+    }
+
+    &__head-wrapper {
+        padding: 0 0 10px 3px;
+        border-bottom: 1px solid #d9d9d9;
+        flex-grow: 1;
+        flex-shrink: 0;
+        @include flexbox();
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        font-size: 20px;
+        @media only screen and (max-width: 476px) {
+            gap: 10px;
+            font-size: 16px;
+            flex-direction: column;
+            align-items: start;
+            position: relative;
+        }
+
+        &.opened {
+            .filter__show {
+                @include rotate(180deg);
+            }
+        }
+    }
+
+    &__head-right {
+        @include flexbox();
+        gap: 15px;
+        align-items: center;
+        justify-content: end;
+        @media only screen and (max-width: 476px) {
+            align-self: end;
+        }
+
+        span:not(.desc, .fakecheck) {
+            font-size: 13px;
+            padding: 3px 12px;
+            user-select: none;
+            background-color: #d9d9d9;
+            @media only screen and (max-width: 476px) {
+                font-size: 13px;
+            }
+        }
+        .fakecheck {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-color: #d9d9d9;
+            z-index: -1;
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+        .desc {
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+
+        label {
+            cursor: pointer;
+            font-size: 13px;
+            padding: 3px 12px;
+            user-select: none;
+            position: relative;
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+
+        input {
+            display: none;
+        }
+        @media (hover: hover) {
+            label:hover .fakecheck {
+                background-color: $red;
+            }
+            label:hover .desc {
+                color: #ffffff;
+            }
+        }
+
+        input:checked ~ .fakecheck,
+        label:active .fakecheck {
+            background-color: $red;
+        }
+        input:checked ~ .desc,
+        label:active .desc {
+            color: #ffffff;
+        }
+    }
+
+    &__reset {
+        flex-shrink: 0;
+        margin-bottom: 10px;
+        position: relative;
+        width: 8px;
+        height: 8px;
+        background-color: transparent;
+
+        span {
+            width: 1.3px;
+            height: 12px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: #000000;
+
+            &:first-child {
+                @include tr_rot(-50%, -50%, 45deg);
+            }
+            &:last-child {
+                @include tr_rot(-50%, -50%, -45deg);
+            }
+        }
+    }
+
+    &__show {
+        background-color: transparent;
+        width: 15px;
+        height: 15px;
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        @include anim(all, 0.3s, ease-out, 0s);
+        @media only screen and (max-width: 476px) {
+            position: absolute;
+            top: 3px;
+            right: 0;
+        }
+
+        svg {
+            @include rotate(90deg);
+            height: 15px;
+            width: 8.5px;
+        }
+
+        path {
+            stroke-width: 2.5px;
+        }
+    }
+
+    &__body {
+        margin-top: 15px;
+        max-height: 150px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        display: none;
+
+        &:has(.filter-range) {
+            height: 40px;
+        }
+
+        &::-webkit-scrollbar {
+            width: 7px;
+        }
+
+        &::-webkit-scrollbar-button {
+            display: none;
+        }
+
+        &::-webkit-scrollbar-track {
+            background-color: #d9d9d9;
+            border-radius: 5px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #6f6f6f;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 25px;
+            font-size: 15px;
+            font-weight: 300;
+            color: #2d2d2d;
+            text-transform: lowercase;
+            cursor: pointer;
+            @include flexbox();
+            gap: 13px;
+            align-items: center;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        input {
+            display: none;
+
+            &:checked + .fakecheck {
+                background-color: $red;
+            }
+        }
+
+        .fakecheck {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #eeeeee;
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+    }
+
+    .filter-range {
+        top: 10px;
+        width: 90%;
+        height: 6px;
+    }
+
+    .ui-widget-content {
+        background-color: #e9e9e9;
+        border: none;
+    }
+
+    .ui-slider-range,
+    .ui-slider-handle {
+        background: $red;
+    }
+
+    .ui-slider-handle {
+        border-radius: 50%;
+        border: none;
+        width: 17px;
+        height: 17px;
+        top: -5px;
+        @include anim(transform, 0.15s, ease-out, 0s);
+
+        &.ui-state-active {
+            @include scale(1.2);
+        }
+    }
+
+    &__btns {
+        @include flexbox();
+        justify-content: space-between;
+        margin-top: 65px;
+
+        button {
+            width: auto;
+            height: auto;
+            font-size: 15px;
+            font-weight: 400;
+            text-transform: none;
+            padding: 2px 15px;
+
+            &[type="reset"] {
+                @include anim(all, 0.3s, ease-out, 0s);
+                background-color: transparent;
+                @media only screen and (max-width: 476px) {
+                    padding: 2px 5px;
+                }
+                &:active {
+                    color: $red;
+                }
+                @media (hover: hover) {
+                    &:hover {
+                        color: $red;
+                    }
+                }
+            }
+            &[type="submit"] {
+                path {
+                    stroke: #ffffff;
+                    stroke-width: 2px;
+                }
+
+                svg {
+                    width: 21px;
+                    height: 21px;
+                    @include anim(all, 0.3s, ease-out, 0s);
+                }
+                @media (hover: hover) {
+                    &:hover {
+                        svg {
+                            @include tr(7px, 0);
+                        }
+                    }
+                }
+                &:active {
+                    svg {
+                        @include tr(7px, 0);
+                    }
+                }
+            }
+        }
+    }
+}

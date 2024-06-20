@@ -1,0 +1,23 @@
+{
+    "name": "perfums-bar",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "browser-sync": "^2.29.3",
+        "del": "^6.0.0",
+        "gulp": "^4.0.2",
+        "gulp-file-include": "^2.3.0",
+        "gulp-group-css-media-queries": "^1.2.2",
+        "gulp-html-prettify": "^0.0.1",
+        "gulp-include": "^2.4.1",
+        "gulp-nunjucks-render": "^2.2.3",
+        "gulp-sass": "^5.1.0",
+        "sass": "^1.69.5"
+    }
+}

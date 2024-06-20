@@ -1,0 +1,353 @@
+@import "./assets/index";
+
+.auth {
+    padding: 63px 0 80px;
+    .title {
+        margin-bottom: 55px;
+    }
+
+    &__switcher {
+        @include flexbox();
+        margin-bottom: 55px;
+    }
+
+    &__switch {
+        flex: 1;
+        margin: 0 -0.5px;
+        position: relative;
+        z-index: 1;
+        height: 66px;
+        font-size: 20px;
+
+        &:hover {
+            z-index: 2;
+        }
+        &.active {
+            background-color: #000;
+            color: #fff;
+
+            &:hover {
+                background-color: #000;
+                border-color: #000;
+                cursor: default;
+            }
+        }
+    }
+
+    &__wrapper {
+        @include flexbox();
+        padding: 0 16px;
+        gap: 10px;
+    }
+    &__form-wrapper {
+        flex: 1;
+        max-width: 430px;
+        width: 100%;
+    }
+    &__form {
+        display: none;
+
+        &_signup {
+            .auth__item-wrapper {
+                @include flexbox();
+                gap: 75px;
+            }
+        }
+
+        &_signin {
+            .auth__item {
+                &:last-of-type {
+                    margin-bottom: 33px;
+                }
+            }
+        }
+
+        &_reset-pass {
+        }
+
+        .btn {
+            padding: 19px 33px;
+            height: auto;
+            font-size: 20px;
+            margin: 0px auto;
+            min-width: 208px;
+            max-width: 100%;
+        }
+    }
+
+    &__item {
+        margin-bottom: 22px;
+
+        &.error {
+            input {
+                border-color: $red;
+            }
+        }
+
+        input {
+            background-color: #eee;
+            height: 61px;
+            width: 100%;
+            flex-grow: 1;
+            color: #6f6f6f;
+            font-size: 20px;
+            padding: 19px 25px;
+            border: 1px solid #eee;
+            @include anim(all, 0.3s, ease-out, 0s);
+
+            &:hover {
+                color: #000000;
+
+                &::placeholder {
+                    color: #000000;
+                }
+            }
+            &:focus {
+                border-color: #000;
+                background-color: #fff;
+                color: #000000;
+            }
+
+            &::placeholder {
+                color: #6f6f6f;
+                @include anim(all, 0.3s, ease-out, 0s);
+            }
+        }
+
+        .show-pass {
+            position: absolute;
+            width: 27px;
+            height: 27px;
+            top: 50%;
+            @include tr(0, -50%);
+            right: 41px;
+            @include flexbox();
+            align-items: center;
+            justify-content: center;
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 120%;
+                height: 2px;
+                background-color: #c6c6c6;
+                bottom: 50%;
+                right: 50%;
+                @include tr_rot(50%, 50%, 145deg);
+                @include anim(all, 0.15s, ease-out, 0s);
+                opacity: 0;
+            }
+
+            &.hide-pass {
+                &::after {
+                    opacity: 1;
+                }
+            }
+
+            svg {
+                width: 27px;
+                height: 21px;
+                @include anim(all, 0.3s, ease-out, 0s);
+            }
+
+            path {
+                @include anim(all, 0.3s, ease-out, 0s);
+            }
+
+            &:hover {
+                svg {
+                    @include scale(1.2);
+                }
+
+                path {
+                    stroke: $red;
+                }
+
+                &::after {
+                    @include tr_rot_scale(50%, 50%, 145deg, 1.1);
+                    background-color: $red;
+                }
+            }
+        }
+        &_pass,
+        &_pass-repeat {
+            position: relative;
+
+            &.error:has(.auth__item-wrapper:hover) .pass-hint {
+                z-index: 2;
+                opacity: 1;
+            }
+
+            .auth__item-wrapper {
+                position: relative;
+            }
+            .pass-hint {
+                padding: 20px;
+                position: absolute;
+                width: 300px;
+                height: fit-content;
+                bottom: calc(100% + 25px);
+                left: 50%;
+                @include tr(-50%, 0);
+                background-color: rgb(251, 243, 208);
+                font-size: 16px;
+                opacity: 0;
+                z-index: -1;
+                @include anim(all, 0.3s, ease-out, 0s);
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 100%;
+                    left: 50%;
+                    @include tr(-50%, 0);
+                    border: 20px solid transparent;
+                    border-top: 20px solid rgb(251, 243, 208);
+                }
+
+                p {
+                    margin-bottom: 10px;
+                }
+                li {
+                    list-style-type: disc;
+                    margin-left: 1.2em;
+                }
+            }
+        }
+
+        &_pass {
+        }
+
+        &_pass-repeat {
+        }
+
+        &_signin-email-tel {
+            .auth__item-wrapper {
+                height: 61px;
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+
+                input {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    @include tr(0, -220%);
+                    @include anim(all, 0.3s, ease-out, 0s);
+                    opacity: 0.7;
+
+                    &.active {
+                        @include tr(0, 0);
+                        opacity: 1;
+                        z-index: 2;
+                    }
+                }
+            }
+        }
+    }
+
+    &__sex {
+        max-width: 180px;
+        width: 100%;
+        font-size: 20px;
+        color: #6f6f6f;
+        @include flexbox();
+        justify-content: space-between;
+        gap: 15px;
+        row-gap: 7px;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+        padding-left: 19px;
+
+        & > span {
+            flex-grow: 1;
+            flex-shrink: 0;
+            display: block;
+            padding-left: 6px;
+            width: 100%;
+        }
+
+        label {
+            flex-grow: 0;
+            flex-shrink: 0;
+            cursor: pointer;
+
+            &:last-of-type {
+                margin-right: 0;
+            }
+
+            span {
+                padding: 8px 17px;
+                background-color: #eee;
+                border: 1px solid #eee;
+                @include anim(all, 0.3s, ease-out, 0s);
+            }
+
+            &:hover {
+                span {
+                    background-color: $red;
+                    color: #fff;
+                }
+            }
+        }
+
+        input {
+            width: 0;
+            height: 0;
+            opacity: 0;
+            z-index: -1;
+            display: none;
+
+            &:checked ~ span {
+                background-color: #000;
+                color: #fff;
+            }
+
+            &.error ~ span {
+                border-color: $red;
+            }
+        }
+    }
+
+    &__date {
+        max-width: 175px;
+        width: 100%;
+        font-size: 20px;
+        color: #6f6f6f;
+
+        span {
+            display: block;
+            margin-bottom: 7px;
+        }
+
+        input {
+            height: 38px;
+            padding-right: 10px;
+        }
+    }
+    &__signin-switch,
+    &__signin-reset {
+        color: #6f6f6f;
+        font-size: 15px;
+        text-decoration: underline;
+        padding-left: 24px;
+        @include anim(all, 0.3s, ease-out, 0s);
+
+        &:hover {
+            color: $red;
+        }
+    }
+    &__signin-switch {
+        margin-bottom: 9px;
+    }
+    &__signin-reset {
+        margin-top: 9px;
+    }
+    .message-wrapper {
+    }
+    .message {
+    }
+}

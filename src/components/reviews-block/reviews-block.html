@@ -1,0 +1,30 @@
+<section id="reviews" class="reviews">
+    <div class="container">
+        <div class="reviews__header">
+            <h2 class="title">Отзывы</h2>
+            <a href="" class="reviews__btn">
+                <span>Оставить отзыв</span>
+                @@include('svg/plus.html')
+            </a>
+        </div>
+        <div class="reviews__wrapper">
+            <div class="reviews__slider swiper">
+                <div class="swiper-wrapper">
+                    @@loop('components/review-card/review-card.html',
+                    '../data/review-cards.json')
+                </div>
+            </div>
+            <div class="reviews__nav swiper-nav">
+                <div class="swiper-nav-item swiper-button-prev">
+                    @@include('svg/arrow-mini.html', {'left': true, 'bottom':
+                    false})
+                </div>
+                <div class="swiper-nav-item swiper-button-next">
+                    @@include('svg/arrow-mini.html', {'left': false, 'bottom':
+                    false})
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</section>

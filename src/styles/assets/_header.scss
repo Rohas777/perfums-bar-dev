@@ -1,0 +1,418 @@
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--header-height);
+    background-color: $black;
+    color: $white;
+    z-index: 20;
+
+    .container {
+        @include flexbox();
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+.header {
+    &__left {
+        @include flexbox();
+        align-items: center;
+        position: relative;
+        z-index: 2;
+
+        .lang {
+            display: none;
+            margin-left: 15px;
+
+            @media screen and (max-width: 1260px) {
+                @include flexbox();
+            }
+            svg {
+                width: 50px;
+                height: 50px;
+                @media screen and (max-width: 992px) {
+                    width: 34px;
+                    height: 34px;
+                }
+                @media screen and (max-width: 600px) {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+        }
+    }
+
+    &__logo {
+        width: 48px;
+        cursor: pointer;
+        user-select: none;
+        @media screen and (max-width: 992px) {
+            width: 42px;
+        }
+        @media screen and (max-width: 600px) {
+            width: 34px;
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__calling {
+        width: 50px;
+        height: 50px;
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 1px solid $white;
+        @include anim(all, 0.3s, ease-out, 0s);
+        margin-left: 80px;
+
+        @media screen and (max-width: 1260px) {
+            margin-left: 20px;
+        }
+        @media screen and (max-width: 992px) {
+            width: 34px;
+            height: 34px;
+        }
+        @media screen and (max-width: 600px) {
+            width: 24px;
+            height: 24px;
+        }
+        svg {
+            @media screen and (max-width: 992px) {
+                width: 16px;
+                height: 17px;
+            }
+            @media screen and (max-width: 600px) {
+                width: 11px;
+                height: 12px;
+            }
+        }
+        path {
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+        @media (hover: hover) {
+            &:hover {
+                border-color: $red;
+
+                path {
+                    stroke: $red;
+                }
+            }
+        }
+        &:active {
+            border-color: $red;
+
+            path {
+                stroke: $red;
+            }
+        }
+    }
+
+    &__nav {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        @media only screen and (max-width: 1260px) {
+            position: fixed;
+            top: 0;
+            background-color: $black;
+            margin-top: var(--header-height);
+            padding-bottom: var(--header-height);
+            display: none;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        ul {
+            @include flexbox();
+            align-items: center;
+            justify-content: center;
+            gap: clamp(25px, 3vw, 40px);
+            height: 100%;
+            width: 100%;
+            @media only screen and (max-width: 1260px) {
+                flex-direction: column;
+            }
+        }
+
+        li {
+            font-size: clamp(18px, 2.5vw, 24px);
+            @include anim(all, 0.3s, ease-out, 0s);
+            @media only screen and (max-width: 1260px) {
+                font-size: 36px;
+                height: 50px;
+                text-align: center;
+            }
+
+            &:active {
+                color: $red;
+            }
+            @media only screen and (hover: hover) and (min-width: 1261px) {
+                &:hover {
+                    color: $red;
+                }
+            }
+            @media (hover: hover) and (max-width: 1260px) {
+                &:hover {
+                    @include scale(1.1);
+                    color: #fff;
+                }
+            }
+            @media only screen and (max-width: 1260px) {
+                &:active {
+                    color: #fff;
+                    @include scale(0.9);
+                }
+            }
+        }
+    }
+
+    &__right {
+        @include flexbox();
+        align-items: center;
+        gap: 35px;
+        position: relative;
+        z-index: 2;
+        @media screen and (max-width: 600px) {
+            gap: 30px;
+        }
+    }
+
+    &__lang {
+        @include flexbox();
+        gap: 10px;
+        align-items: center;
+        cursor: pointer;
+        background-color: transparent;
+        color: inherit;
+        @include anim(all, 0.3s, ease-out, 0s);
+
+        @media screen and (max-width: 1260px) {
+            display: none;
+        }
+        span {
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        path {
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+        @media (hover: hover) {
+            &:hover {
+                color: $red;
+
+                path {
+                    fill: $red;
+                }
+            }
+        }
+        &:active {
+            color: $red;
+
+            path {
+                fill: $red;
+            }
+        }
+    }
+
+    &__cart,
+    &__profile {
+        background-color: $white;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        cursor: pointer;
+        @include flexbox();
+        align-items: center;
+        justify-content: center;
+        @include anim(all, 0.3s, ease-out, 0s);
+
+        @media screen and (max-width: 992px) {
+            width: 34px;
+            height: 34px;
+        }
+        @media screen and (max-width: 600px) {
+            width: 24px;
+            height: 24px;
+        }
+        path {
+            @include anim(all, 0.2s, ease-out, 0s);
+        }
+    }
+
+    &__cart {
+        position: relative;
+        span {
+            position: absolute;
+            width: 22px;
+            height: 22px;
+            top: -7px;
+            right: -5px;
+            border-radius: 50%;
+            background-color: $red;
+            color: $black;
+            @include flexbox();
+            align-items: center;
+            justify-content: center;
+            font-family: $subtitleFont;
+            font-weight: bold;
+            font-size: 15px;
+            @include anim(all, 0.15s, ease-in-out, 0s);
+            @media screen and (max-width: 992px) {
+                width: 18px;
+                height: 18px;
+                font-size: 13px;
+            }
+            @media screen and (max-width: 600px) {
+                width: 15px;
+                height: 15px;
+                font-size: 12px;
+            }
+        }
+        svg {
+            @media screen and (max-width: 992px) {
+                width: 14px;
+                height: 14px;
+            }
+            @media screen and (max-width: 600px) {
+                width: 12px;
+                height: 12px;
+            }
+        }
+        @media (hover: hover) {
+            &:hover {
+                background-color: $red;
+                span {
+                    top: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                path {
+                    stroke: $red;
+                }
+            }
+        }
+        &:active {
+            background-color: $red;
+            span {
+                top: 0;
+                right: 0;
+                width: 100%;
+                height: 100%;
+            }
+
+            path {
+                stroke: $red;
+            }
+        }
+    }
+
+    &__profile {
+        @include anim(all, 0.3s, ease-out, 0s);
+
+        svg {
+            @media screen and (max-width: 992px) {
+                width: 14px;
+                height: 17px;
+            }
+            @media screen and (max-width: 600px) {
+                width: 12px;
+                height: 15px;
+            }
+        }
+        path {
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+        @media (hover: hover) {
+            &:hover {
+                background-color: $red;
+
+                path {
+                    stroke: $white;
+                }
+            }
+        }
+        &:active {
+            background-color: $red;
+
+            path {
+                stroke: $white;
+            }
+        }
+    }
+
+    &__goods-count {
+    }
+
+    &__lang {
+    }
+
+    &__burger {
+        width: 40px;
+        height: 40px;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        display: none;
+        @media only screen and (max-width: 1260px) {
+            @include flexbox();
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                span {
+                    &:nth-of-type(1) {
+                        background-color: #5b0000;
+                    }
+                    &:nth-of-type(2) {
+                        background-color: #bc0000;
+                    }
+                    &:nth-of-type(3) {
+                        background-color: #ff0000;
+                    }
+                }
+            }
+        }
+        &:active,
+        &.active {
+            span {
+                &:nth-of-type(1) {
+                    background-color: #5b0000;
+                }
+                &:nth-of-type(2) {
+                    background-color: #bc0000;
+                }
+                &:nth-of-type(3) {
+                    background-color: #ff0000;
+                }
+            }
+        }
+        span {
+            width: 100%;
+            height: 3px;
+            display: block;
+            @include anim(all, 0.3s, ease-out, 0s);
+
+            &:nth-of-type(1) {
+                background-color: #fff;
+            }
+            &:nth-of-type(2) {
+                background-color: #c1c1c1;
+            }
+            &:nth-of-type(3) {
+                background-color: #555;
+            }
+        }
+    }
+}

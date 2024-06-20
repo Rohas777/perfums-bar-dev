@@ -1,0 +1,26 @@
+[
+    {
+        "img": {
+            "src": "src='/images/offer/1.png'",
+            "alt": "alt='PERFUMS BAR'"
+        },
+        "title": "PERFUMS BAR",
+        "subtitle": "The Best Fragrance Collection Of The World",
+        "link": {
+            "title": "Перейти в каталог",
+            "href": "href='/catalog.html'"
+        }
+    },
+    {
+        "img": {
+            "src": "src='/images/offer/2.png'",
+            "alt": "alt='PERFUMS BAR'"
+        },
+        "title": "PERFUMS BAR",
+        "subtitle": "The Best Fragrance Collection Of The World",
+        "link": {
+            "title": "Перейти в каталог",
+            "href": "href='/catalog.html'"
+        }
+    }
+]

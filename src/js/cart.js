@@ -1,0 +1,32 @@
+$(document).ready(function () {
+    //=include product-card-cart.js
+
+    //NOTE - Слайдер товаров
+
+    if ($(".product-card-cart").length > 3) {
+        const cartSwiper = new Swiper(".cart__slider", {
+            slidesPerView: 3,
+            spaceBetween: 35,
+
+            navigation: {
+                nextEl: ".cart .swiper-button-next",
+                prevEl: ".cart .swiper-button-prev",
+            },
+        });
+    } else {
+        $(".cart").addClass("disabled");
+    }
+
+    //NOTE - Слайдер рекомендуемых товаров
+
+    const recommendationsSwiper = new Swiper(".recommendations__slider", {
+        slidesPerView: 3,
+        spaceBetween: 35,
+        loop: true,
+
+        navigation: {
+            nextEl: ".recommendations__slider .swiper-button-next",
+            prevEl: ".recommendations__slider .swiper-button-prev",
+        },
+    });
+});

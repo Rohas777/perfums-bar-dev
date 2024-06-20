@@ -1,0 +1,275 @@
+<main>
+    <section class="breadcrumbs">
+        <div class="container">
+            <p><a href="/" title="На главную">Главная</a> / каталог</p>
+        </div>
+    </section>
+    <section class="menu">
+        <div class="container">
+            <h1 class="title">Каталог</h1>
+            <div class="menu__selector">
+                <div class="menu__categories">
+                    <button class="active">Духи</button>
+                    <button>Флаконы</button>
+                    <button>Свечи</button>
+                    <button>Диффузоры</button>
+                </div>
+            </div>
+            <div class="menu__buttons">
+                <button class="menu__search menu__button">
+                    <div class="search">
+                        <div class="search__border"></div>
+                        <input type="text" class="search__input" />
+                        <div class="search__close"></div>
+                        <div class="search__open"></div>
+                    </div>
+                </button>
+                <button class="menu__filter menu__button">
+                    @@include('svg/filter.html')
+                </button>
+            </div>
+        </div>
+    </section>
+    <section class="catalog">
+        <div class="container">
+            <div class="catalog__wrapper">
+                @@loop('components/product-card/product-card.html',
+                '../data/catalog-cards.json')
+            </div>
+            <div class="catalog__pagination">
+                <a href="/" class="btn catalog__nav catalog__nav_prev">
+                    @@include('svg/arrow-mini.html', {'left': true, 'bottom':
+                    false})
+                </a>
+                <ul class="catalog__pages">
+                    <li class="active">1</li>
+                    <li><a href="/">2</a></li>
+                    <li><a href="/">3</a></li>
+                    <li><a href="/">4</a></li>
+                    <li><a href="/">5</a></li>
+                    <li class="dots">...</li>
+                    <li><a href="/">18</a></li>
+                </ul>
+                <a
+                    href="/"
+                    class="btn btn_black catalog__nav catalog__nav_next"
+                >
+                    @@include('svg/arrow-mini.html', {'left': false, 'bottom':
+                    false})
+                </a>
+            </div>
+        </div>
+    </section>
+    @@include('components/product-recommendations/product-recommendations.html',
+    { 'classes': { 'main': 'history', 'slider': 'history__slider' }, 'title':
+    'СМОТРЕЛИ РАНЕЕ', 'cards': '../data/history-cards.json' })
+    <aside class="filter">
+        <div class="filter__close">@@include("svg/cross.html")</div>
+        <form class="filter__form">
+            <div class="filter__chunk">
+                <div class="filter__head">
+                    <div class="filter__head-wrapper">
+                        <p>Пол</p>
+                        <div class="filter__head-right">
+                            <label for="unisex">
+                                <input
+                                    type="checkbox"
+                                    name="unisex"
+                                    id="unisex"
+                                />
+                                <span class="fakecheck"></span>
+                                <span class="desc">унисекс</span>
+                            </label>
+                            <label for="men">
+                                <input type="checkbox" name="men" id="men" />
+                                <span class="fakecheck"></span>
+                                <span class="desc">мужской</span>
+                            </label>
+                            <label for="women">
+                                <input
+                                    type="checkbox"
+                                    name="women"
+                                    id="women"
+                                />
+                                <span class="fakecheck"></span>
+                                <span class="desc">женский</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="filter__reset">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+            <div class="filter__chunk filter__range">
+                <div class="filter__head">
+                    <div class="filter__head-wrapper">
+                        <p>Цена</p>
+                        <div class="filter__head-right">
+                            <span class="filter__range-min">От 4 000</span>
+                            <span class="filter__range-max">До 20 000</span>
+                            <div class="filter__show">
+                                @@include('svg/arrow-mini.html', {'left': false,
+                                'bottom': false})
+                            </div>
+                        </div>
+                    </div>
+                    <button class="filter__reset">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="filter__body">
+                    <div class="filter-range"></div>
+                </div>
+            </div>
+            <div class="filter__chunk">
+                <div class="filter__head">
+                    <div class="filter__head-wrapper">
+                        <p>Группа ароматов</p>
+                        <div class="filter__show">
+                            @@include('svg/arrow-mini.html', {'left': false,
+                            'bottom': false})
+                        </div>
+                    </div>
+                    <button class="filter__reset">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="filter__body">
+                    <label for="aldeg">
+                        <input type="checkbox" name="aldeg" id="aldeg" />
+                        <span class="fakecheck"></span>
+                        Альдегидные
+                    </label>
+                    <label for="water">
+                        <input type="checkbox" name="water" id="water" />
+                        <span class="fakecheck"></span>
+                        водные
+                    </label>
+                    <label for="eastern">
+                        <input type="checkbox" name="eastern" id="eastern" />
+                        <span class="fakecheck"></span>
+                        восточные
+                    </label>
+                    <label for="gourmet">
+                        <input type="checkbox" name="gourmet" id="gourmet" />
+                        <span class="fakecheck"></span>
+                        гурманские
+                    </label>
+                    <label for="lorem">
+                        <input type="checkbox" name="lorem" id="lorem" />
+                        <span class="fakecheck"></span>
+                        lorem
+                    </label>
+                    <label for="ipsum">
+                        <input type="checkbox" name="ipsum" id="ipsum" />
+                        <span class="fakecheck"></span>
+                        ipsum
+                    </label>
+                </div>
+            </div>
+            <div class="filter__chunk">
+                <div class="filter__head">
+                    <div class="filter__head-wrapper">
+                        <p>Ноты</p>
+                        <div class="filter__show">
+                            @@include('svg/arrow-mini.html', {'left': false,
+                            'bottom': false})
+                        </div>
+                    </div>
+                    <button class="filter__reset">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="filter__body">
+                    <label for="apricot">
+                        <input type="checkbox" name="apricot" id="apricot" />
+                        <span class="fakecheck"></span>
+                        Абрикос
+                    </label>
+                    <label for="quince">
+                        <input type="checkbox" name="quince" id="quince" />
+                        <span class="fakecheck"></span>
+                        айва
+                    </label>
+                    <label for="ambergris">
+                        <input
+                            type="checkbox"
+                            name="ambergris"
+                            id="ambergris"
+                        />
+                        <span class="fakecheck"></span>
+                        амбра
+                    </label>
+                    <label for="set">
+                        <input type="checkbox" name="set" id="set" />
+                        <span class="fakecheck"></span>
+                        set
+                    </label>
+                    <label for="dollar">
+                        <input type="checkbox" name="dollar" id="dollar" />
+                        <span class="fakecheck"></span>
+                        dollar
+                    </label>
+                </div>
+            </div>
+            <div class="filter__chunk">
+                <div class="filter__head">
+                    <div class="filter__head-wrapper">
+                        <p>Бренды</p>
+                        <div class="filter__show">
+                            @@include('svg/arrow-mini.html', {'left': false,
+                            'bottom': false})
+                        </div>
+                    </div>
+                    <button class="filter__reset">
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+                <div class="filter__body">
+                    <label for="chanel">
+                        <input type="checkbox" name="chanel" id="chanel" />
+                        <span class="fakecheck"></span>
+                        Chanel
+                    </label>
+                    <label for="tomford">
+                        <input type="checkbox" name="tomford" id="tomford" />
+                        <span class="fakecheck"></span>
+                        Tom Ford
+                    </label>
+                    <label for="gucci">
+                        <input type="checkbox" name="gucci" id="gucci" />
+                        <span class="fakecheck"></span>
+                        Gucci
+                    </label>
+                    <label for="dolce-gabbana">
+                        <input
+                            type="checkbox"
+                            name="dolce-gabbana"
+                            id="dolce-gabbana"
+                        />
+                        <span class="fakecheck"></span>
+                        Dolce & Gabbana
+                    </label>
+                    <label for="givenchy">
+                        <input type="checkbox" name="givenchy" id="givenchy" />
+                        <span class="fakecheck"></span>
+                        Givenchy
+                    </label>
+                </div>
+            </div>
+            <div class="filter__btns">
+                <button type="reset">Очистить фильтры</button>
+                <button class="btn btn_black" type="submit">
+                    <span>Применить</span>
+                    @@include("svg/arrow.html")
+                </button>
+            </div>
+        </form>
+    </aside>
+</main>

@@ -1,0 +1,129 @@
+@import "./assets/index";
+
+@import "../components/review-card/review-card.scss";
+@import "../components/reviews-block/reviews-block.scss";
+
+.content {
+    padding-bottom: 85px;
+
+    h1 {
+        margin-bottom: 50px;
+    }
+
+    p {
+        font-size: clamp(12px, 1.5vw, 20px);
+        font-weight: 300;
+        margin-bottom: 30px;
+        @media only screen and (max-width: 992px) {
+            margin-bottom: 15px;
+        }
+        @media only screen and (max-width: 600px) {
+            margin-bottom: 10px;
+        }
+    }
+
+    img {
+        max-width: 50%;
+        min-width: 100px;
+        height: auto;
+    }
+
+    .alignleft {
+        margin: 14px 35px 0 0;
+    }
+    .alignright {
+        margin: 0 0 35px 35px;
+    }
+}
+
+.advantages {
+    padding: 55px 0;
+    background-color: #fff7f6;
+    overflow: hidden;
+    position: relative;
+
+    &__bg {
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 2;
+            background: linear-gradient(
+                270.05deg,
+                #fff7f6 0.04%,
+                rgba(255, 255, 255, 0) 170.34%
+            );
+        }
+
+        img {
+            height: 100%;
+        }
+    }
+
+    .container {
+        @include flexbox();
+        align-self: start;
+        gap: 40px;
+        z-index: 2;
+    }
+
+    h2 {
+        max-width: 419px;
+    }
+
+    ul {
+    }
+
+    li {
+        padding: 25px 0;
+        position: relative;
+
+        &:first-of-type {
+            padding-bottom: 25px;
+        }
+        &::after {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 1px;
+            bottom: -1px;
+            left: 0;
+            background-color: #ff7a7a;
+        }
+
+        h3 {
+            font-weight: 500;
+            line-height: normal;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        strong {
+            font-size: 54px;
+            font-weight: 500;
+        }
+        span {
+            margin-left: 20px;
+            font-size: 20px;
+            text-transform: none;
+        }
+        p {
+            font-weight: 300;
+            font-size: 20px;
+            line-height: normal;
+        }
+    }
+}
+
+.reviews {
+    margin-top: 110px;
+    margin-bottom: 155px;
+}

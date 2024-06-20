@@ -1,0 +1,63 @@
+<main>
+    <section class="breadcrumbs">
+        <div class="container">
+            <p><a href="/" title="На главную">Главная</a> / корзина</p>
+        </div>
+    </section>
+    <div class="cart">
+        <div class="container">
+            <div class="cart__head">
+                <div class="cart__title">
+                    <h2 class="title">Корзина</h2>
+                    <span class="separator"></span>
+                    <span class="cart__count">3 шт</span>
+                </div>
+                <button class="cart__clear">очистить корзину</button>
+            </div>
+            <div class="swiper-nav">
+                <div class="swiper-nav-item swiper-button-prev">
+                    @@include('svg/arrow-mini.html', {'left': true, 'bottom':
+                    false})
+                </div>
+                <div class="swiper-nav-item swiper-button-next">
+                    @@include('svg/arrow-mini.html', {'left': false, 'bottom':
+                    false})
+                </div>
+            </div>
+            <div class="cart__slider swiper">
+                <div class="swiper-wrapper">
+                    @@loop('components/product-card-cart/product-card-cart.html',
+                    '../data/cart-cards.json')
+                </div>
+            </div>
+            <form id="cartSum" class="cart__sum">
+                <div class="cart__promo">
+                    <input
+                        placeholder="ВВЕДИТЕ ПРОМОКОД"
+                        type="text"
+                        id="cartPromo"
+                        name="cartPromo"
+                    />
+                    <div class="message"></div>
+                </div>
+                <div class="cart__result">
+                    <div class="cart__total">
+                        <span>итог:</span>
+                        <strong>59 700 ₽</strong>
+                    </div>
+                    <div class="cart__discount">
+                        <span>Ваша скидка</span>
+                        <strong>- 3 000 ₽</strong>
+                    </div>
+                    <a href="/payment.html" type="submit" class="btn btn_black">
+                        оформить заказ
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+    @@include('components/product-recommendations/product-recommendations.html',
+    { 'classes': { 'main': 'recommendations', 'slider':
+    'recommendations__slider' }, 'title': 'ВАМ ТАКЖЕ ПОНРАВИТСЯ', 'cards':
+    '../data/recommendations-cards.json' })
+</main>

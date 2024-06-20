@@ -1,0 +1,88 @@
+.review-card {
+    background-color: #f5f5f5;
+    padding: 25px 34px 34px 25px;
+    color: #6f6f6f;
+
+    &__header {
+        @include flexbox();
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 15px;
+        font-size: 24px;
+        font-weight: 500;
+        color: #4a4a4a;
+    }
+
+    &__grade {
+        @include flexbox();
+        gap: 5px;
+        align-items: center;
+    }
+    .grade-1 {
+        svg:nth-child(1) {
+            path {
+                fill: #b00000;
+            }
+        }
+    }
+    .grade-2 {
+        svg:nth-child(-n + 2) {
+            path {
+                fill: #b00000;
+            }
+        }
+    }
+    .grade-3 {
+        svg:nth-child(-n + 3) {
+            path {
+                fill: #b00000;
+            }
+        }
+    }
+    .grade-4 {
+        svg:nth-child(-n + 4) {
+            path {
+                fill: #b00000;
+            }
+        }
+    }
+    .grade-5 {
+        svg:nth-child(-n + 5) {
+            path {
+                fill: #b00000;
+            }
+        }
+    }
+
+    &__date {
+        @include flexbox();
+        gap: 20px;
+        align-items: center;
+        margin-bottom: 30px;
+        font-size: 15px;
+
+        span {
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+    }
+
+    &__desc {
+        @include anim(all, 0.3s, ease-out, 0s);
+    }
+
+    &.swiper-slide-next {
+        background-color: #ffeaea;
+        @media only screen and (max-width: 992px) {
+            background-color: #f5f5f5;
+        }
+
+        .review-card__date {
+            span:last-of-type {
+                font-weight: 500;
+            }
+        }
+        .review-card__desc {
+            color: #000000;
+        }
+    }
+}

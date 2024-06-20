@@ -1,0 +1,195 @@
+footer {
+    background-color: #000000;
+    padding: 45px 0 110px;
+    color: #ffffff;
+    @media only screen and (max-width: 1260px) {
+        padding-top: 0;
+        overflow: hidden;
+    }
+    @media only screen and (max-width: 992px) {
+        padding-bottom: 165px;
+    }
+    @media only screen and (max-width: 600px) {
+        padding-bottom: 100px;
+    }
+
+    .container {
+    }
+
+    a {
+        @include anim(all, 0.3s, ease-out, 0s);
+
+        @media (hover: hover) {
+            &:hover {
+                color: $red;
+            }
+        }
+        &:active {
+            color: $red;
+        }
+    }
+
+    .section-separator {
+        margin: 0 63px;
+        width: calc(100% - 63px * 2);
+        @media only screen and (max-width: 1260px) {
+            width: 100%;
+            position: relative;
+
+            &::after,
+            &::before {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 1px;
+                top: 0;
+                left: 0;
+                background-color: #c6c6c6;
+                @include tr(-100%, 0);
+            }
+            &::before {
+                right: 0;
+                @include tr(100%, 0);
+            }
+        }
+    }
+}
+
+.footer {
+    &__container {
+        padding-right: 50px;
+        @include flexbox();
+        gap: 90px;
+        align-items: end;
+        margin-bottom: 20px;
+        @media only screen and (max-width: 1260px) {
+            flex-direction: column-reverse;
+            align-items: start;
+            padding-top: 100px;
+        }
+        @media only screen and (max-width: 600px) {
+            padding-top: 100px;
+        }
+    }
+
+    &__contacts {
+    }
+
+    &__logo {
+        width: 87px;
+        height: 109px;
+        display: block;
+        margin-bottom: 20px;
+        user-select: none;
+        @media only screen and (max-width: 1260px) {
+            display: none;
+        }
+
+        &_mobile {
+            position: absolute;
+            top: 30px;
+            left: 25px;
+            display: none;
+            width: 44px;
+            height: 55px;
+            @media only screen and (max-width: 1260px) {
+                display: block;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+
+    &__tel {
+        margin-bottom: 15px;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+
+        a {
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 13px;
+        }
+        span {
+            margin-left: 5px;
+            font-size: 11px;
+            color: #939393;
+        }
+    }
+
+    &__wrapper {
+        @include flexbox();
+        justify-content: space-between;
+        flex: 1;
+        @media only screen and (max-width: 1260px) {
+            width: 100%;
+            justify-content: space-around;
+            gap: 30px;
+            row-gap: 60px;
+            flex-wrap: wrap;
+        }
+        @media only screen and (max-width: 600px) {
+            justify-content: start;
+        }
+    }
+
+    &__column {
+        min-width: 150px;
+        @media only screen and (max-width: 600px) {
+            flex: 1;
+        }
+        h2 {
+            font-weight: 500;
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        li {
+            margin-bottom: 20px;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        a {
+            font-size: 20px;
+            color: #c6c6c6;
+        }
+    }
+
+    &__socials {
+        @include flexbox();
+        gap: 15px;
+        align-items: center;
+        margin-bottom: 40px;
+        margin-top: 20px;
+
+        a {
+            width: 42px;
+            height: 42px;
+            background-color: #232323;
+            border-radius: 50%;
+            @include flexbox();
+            align-items: center;
+            justify-content: center;
+
+            &:active {
+                background-color: $red;
+            }
+            @media (hover: hover) {
+                &:hover {
+                    background-color: $red;
+                }
+            }
+        }
+    }
+}

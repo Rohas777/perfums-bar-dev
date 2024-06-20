@@ -1,0 +1,47 @@
+[
+    {
+        "image": {
+            "main": "/images/catalog/tom-ford-lost-cherry.png",
+            "origin": "/images/catalog/thumb.png"
+        },
+        "name": "TOM FORD lost cherry",
+        "href": "/product.html",
+        "classes": "swiper-slide"
+    },
+    {
+        "image": {
+            "main": "/images/catalog/tom-ford-bitter-peach.png",
+            "origin": "/images/catalog/thumb.png"
+        },
+        "name": "TOM FORD bitter peach",
+        "href": "/product.html",
+        "classes": "swiper-slide"
+    },
+    {
+        "image": {
+            "main": "/images/catalog/tom-ford-lost-cherry.png",
+            "origin": "/images/catalog/thumb.png"
+        },
+        "name": "TOM FORD lost cherry",
+        "href": "/product.html",
+        "classes": "swiper-slide"
+    },
+    {
+        "image": {
+            "main": "/images/catalog/tom-ford-bitter-peach.png",
+            "origin": "/images/catalog/thumb.png"
+        },
+        "name": "TOM FORD bitter peach",
+        "href": "/product.html",
+        "classes": "swiper-slide"
+    },
+    {
+        "image": {
+            "main": "/images/catalog/tom-ford-lost-cherry.png",
+            "origin": "/images/catalog/thumb.png"
+        },
+        "name": "TOM FORD lost cherry",
+        "href": "/product.html",
+        "classes": "swiper-slide"
+    }
+]

@@ -1,0 +1,229 @@
+<main>
+    <section class="auth">
+        <div class="container">
+            <h2 class="title">Вход в личный кабинет</h2>
+            <div class="auth__switcher">
+                <button
+                    data-switch="signup"
+                    class="auth__switch btn btn_border active"
+                >
+                    Регистрация
+                </button>
+                <button
+                    data-switch="signin"
+                    class="auth__switch btn btn_border"
+                >
+                    вход
+                </button>
+                <button
+                    data-switch="reset-pass"
+                    class="auth__switch btn btn_border"
+                >
+                    Сбросить пароль
+                </button>
+            </div>
+            <div class="auth__wrapper">
+                <div class="auth__form-wrapper">
+                    <form
+                        id="signup"
+                        class="auth__form auth__form_signup active"
+                    >
+                        <div class="message-wrapper auth__item">
+                            <input
+                                placeholder="Ваше имя"
+                                type="text"
+                                name="signup-name"
+                                id="signup-name"
+                            />
+                            <div class="message"></div>
+                        </div>
+                        <div class="message-wrapper auth__item">
+                            <input
+                                placeholder="+7 (XXX) XXX XX XX"
+                                type="tel"
+                                data-type="tel"
+                                name="signup-tel"
+                                id="signup-tel"
+                            />
+                            <div class="message"></div>
+                        </div>
+                        <div class="message-wrapper auth__item">
+                            <input
+                                placeholder="Ваш e-mail"
+                                type="text"
+                                data-type="email"
+                                name="signup-email"
+                                id="signup-email"
+                            />
+                            <div class="message"></div>
+                        </div>
+                        <div class="message-wrapper auth__item">
+                            <div class="auth__item-wrapper">
+                                <div class="auth__sex">
+                                    <span>Пол</span>
+                                    <label for="signup-sex-male">
+                                        <input
+                                            type="radio"
+                                            name="signup-sex"
+                                            id="signup-sex-male"
+                                            value="male"
+                                        />
+                                        <span>муж</span>
+                                    </label>
+                                    <label for="signup-sex-female">
+                                        <input
+                                            type="radio"
+                                            name="signup-sex"
+                                            id="signup-sex-female"
+                                            value="female"
+                                        />
+                                        <span>жен</span>
+                                    </label>
+                                </div>
+                                <div class="auth__date">
+                                    <span>Дата рождения</span>
+                                    <label for="signup-date">
+                                        <input
+                                            type="date"
+                                            name="signup-date"
+                                            id="signup-date"
+                                            data-type="birth"
+                                        />
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="message"></div>
+                        </div>
+                        <div class="message-wrapper auth__item auth__item_pass">
+                            <div class="pass-hint">
+                                <p>
+                                    Пароль должен соответствовать следующим
+                                    критериям:
+                                </p>
+                                <ul>
+                                    <li>Минимум одна буква</li>
+                                    <li>Минимум одна цифра</li>
+                                    <li>Минимум 8 символов</li>
+                                    <li>Минимум одна заглавная буква</li>
+                                    <li>Только латинские симфолы</li>
+                                </ul>
+                            </div>
+                            <div class="auth__item-wrapper">
+                                <input
+                                    placeholder="Пароль"
+                                    type="password"
+                                    name="signup-pass"
+                                    id="signup-pass"
+                                    data-type="signup-pass"
+                                    class="original-pass"
+                                />
+                                <button class="show-pass">
+                                    @@include('svg/eye.html')
+                                </button>
+                            </div>
+                            <div class="message"></div>
+                        </div>
+                        <div
+                            class="message-wrapper auth__item auth__item_pass-repeat"
+                        >
+                            <div class="auth__item-wrapper">
+                                <input
+                                    placeholder="Повторите пароль"
+                                    type="password"
+                                    name="signup-pass-repeat"
+                                    id="signup-pass-repeat"
+                                    data-type="signup-pass-repeat"
+                                />
+                                <button class="show-pass">
+                                    @@include('svg/eye.html')
+                                </button>
+                            </div>
+                            <div class="message"></div>
+                        </div>
+                        <button type="submit" class="btn btn_black">
+                            зАРЕГИСТРИРОВАТЬСЯ
+                        </button>
+                    </form>
+                </div>
+                <div class="auth__form-wrapper">
+                    <form
+                        id="signin"
+                        class="auth__form auth__form_signin"
+                        data-auth-type="tel"
+                    >
+                        <div
+                            class="message-wrapper auth__item auth__item_signin-email-tel"
+                        >
+                            <button class="auth__signin-switch">
+                                Войти по e-mail
+                            </button>
+                            <div class="auth__item-wrapper">
+                                <input
+                                    class="active"
+                                    placeholder="+7 (XXX) XXX XX XX"
+                                    type="tel"
+                                    data-type="tel"
+                                    data-desc="Войти с помощью телефона"
+                                    name="signin-tel"
+                                    id="signin-tel"
+                                />
+                                <input
+                                    placeholder="Ваш e-mail"
+                                    type="text"
+                                    data-desc="Войти по e-mail"
+                                    data-type="email"
+                                    name="signin-email"
+                                    id="signin-email"
+                                />
+                            </div>
+                            <div class="message"></div>
+                        </div>
+                        <div class="message-wrapper auth__item auth__item_pass">
+                            <div class="auth__item-wrapper">
+                                <input
+                                    placeholder="Пароль"
+                                    type="password"
+                                    name="signin-pass"
+                                    id="signin-pass"
+                                />
+                                <button class="show-pass">
+                                    @@include('svg/eye.html')
+                                </button>
+                            </div>
+                            <button
+                                data-switch="reset-pass"
+                                class="auth__signin-reset"
+                            >
+                                Я не помню пароль
+                            </button>
+                            <div class="message"></div>
+                        </div>
+                        <button type="submit" class="btn btn_black">
+                            ВОЙТИ
+                        </button>
+                    </form>
+                </div>
+                <div class="auth__form-wrapper">
+                    <form
+                        id="reset-pass"
+                        class="auth__form auth__form_reset-pass"
+                    >
+                        <div class="message-wrapper auth__item">
+                            <input
+                                placeholder="Ваш e-mail"
+                                type="text"
+                                data-type="email"
+                                name="reset-pass-email"
+                                id="reset-pass-email"
+                            />
+                            <div class="message"></div>
+                        </div>
+                        <button type="submit" class="btn btn_black">
+                            Сбросить
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

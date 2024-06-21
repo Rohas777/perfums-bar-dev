@@ -38,54 +38,30 @@
                 </div>
             </div>
             <div class="main__history">
+                <div class="swiper-nav">
+                    <div class="swiper-nav-item swiper-button-prev">
+                        @@include('svg/arrow-mini.html', {'left': true,
+                        'bottom': false})
+                    </div>
+                    <div class="swiper-nav-item swiper-button-next">
+                        @@include('svg/arrow-mini.html', {'left': false,
+                        'bottom': false})
+                    </div>
+                </div>
                 <div class="main__history-head">
                     <h2 class="title">История покупок</h2>
-                    <div class="swiper-nav">
-                        <div class="swiper-nav-item swiper-button-prev">
-                            @@include('svg/arrow-mini.html', {'left': true,
-                            'bottom': false})
-                        </div>
-                        <div class="swiper-nav-item swiper-button-next">
-                            @@include('svg/arrow-mini.html', {'left': false,
-                            'bottom': false})
-                        </div>
-                    </div>
                 </div>
                 <div class="main__history-slider swiper">
                     <div class="swiper-wrapper">
                         @@loop('components/product-card-mini/product-card-mini.html',
                         '../data/history-cards.json')
                     </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="favs">
-        <div class="container">
-            <h2 class="title">Избранное</h2>
-            <div class="favs__wrapper">
-                @@loop('components/product-card/product-card.html',
-                '../data/fav-cards.json')
-            </div>
-            <div class="favs__pagination">
-                <a href="/" class="btn favs__nav favs__nav_prev">
-                    @@include('svg/arrow-mini.html', {'left': true, 'bottom':
-                    false})
-                </a>
-                <ul class="favs__pages">
-                    <li class="active">1</li>
-                    <li><a href="/">2</a></li>
-                    <li><a href="/">3</a></li>
-                    <li><a href="/">4</a></li>
-                    <li><a href="/">5</a></li>
-                    <li class="dots">...</li>
-                    <li><a href="/">18</a></li>
-                </ul>
-                <a href="/" class="btn btn_black favs__nav favs__nav_next">
-                    @@include('svg/arrow-mini.html', {'left': false, 'bottom':
-                    false})
-                </a>
-            </div>
-        </div>
-    </section>
+    @@include('components/product-recommendations/product-recommendations.html',
+    { 'classes': { 'main': 'favs', 'slider': 'favs__slider' }, 'title':
+    'Избранное', 'cards': '../data/similar-cards.json' })
 </main>

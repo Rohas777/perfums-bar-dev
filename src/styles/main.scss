@@ -26,6 +26,20 @@
         }
     }
 
+    &__content {
+        @media screen and (max-width: 992px) {
+            padding-bottom: 118px;
+        }
+        @media screen and (max-width: 600px) {
+            padding-bottom: 50px;
+        }
+
+        .container {
+            @media screen and (max-width: 600px) {
+                justify-content: center;
+            }
+        }
+    }
     .swiper {
     }
     .swiper-wrapper {
@@ -79,6 +93,8 @@
 
     &__advantages {
         background-color: #fff7f6;
+        padding: 35px 0;
+
         @media screen and (max-width: 992px) {
             padding: 25px 0;
         }
@@ -87,12 +103,26 @@
         }
     }
 
+    &-advantages__wrapper {
+        @include flexbox();
+        padding: 0 35px;
+        gap: 30px;
+        @media screen and (max-width: 834px) {
+            display: none;
+        }
+    }
+
     &-advantages__slider {
-        padding: 35px;
+        padding: 0 20px;
         width: 100%;
+        display: none;
 
         @media screen and (max-width: 834px) {
-            padding: 0 20px;
+            display: block;
+        }
+
+        .swiper-wrapper {
+            align-items: center;
         }
 
         .swiper-button-nav {
@@ -100,11 +130,7 @@
             height: 100%;
             top: 0;
             margin-top: 0;
-            display: none;
-
-            @media screen and (max-width: 834px) {
-                @include flexbox();
-            }
+            @include flexbox();
 
             &::after {
                 content: none;
@@ -833,11 +859,12 @@
         height: 100%;
         top: 0;
         left: 0;
+        overflow: hidden;
 
         &::after {
             content: "";
             position: absolute;
-            width: 100%;
+            width: 101%;
             height: 100%;
             top: 0;
             left: 0;

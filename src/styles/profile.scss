@@ -2,14 +2,25 @@
 
 @import "../components/product-card/product-card.scss";
 @import "../components/product-card-mini/product-card-mini.scss";
+@import "../components/product-recommendations/product-recommendations.scss";
 
 .main {
     border-bottom: 1px solid #6f6f6f;
     overflow: hidden;
     margin-bottom: 100px;
+    @media screen and (max-width: 992px) {
+        margin-bottom: 40px;
+    }
 
     .container {
         @include flexbox();
+        @media screen and (max-width: 1024px) {
+            gap: 64px;
+        }
+        @media screen and (max-width: 834px) {
+            display: block;
+            gap: 60px;
+        }
     }
 
     &__profile {
@@ -17,6 +28,10 @@
         flex-basis: 350px;
         border-right: 1px solid #6f6f6f;
         padding-bottom: 42px;
+        @media screen and (max-width: 1024px) {
+            flex-grow: 1;
+            border: none;
+        }
 
         .title {
             margin-bottom: 43px;
@@ -29,6 +44,13 @@
         margin-right: 97px;
         font-family: $subtitleFont;
         position: relative;
+        @media screen and (max-width: 1024px) {
+            margin-right: 0;
+            padding-bottom: 30px;
+        }
+        @media screen and (max-width: 600px) {
+            padding-top: 40px;
+        }
     }
 
     &__profile-name {
@@ -96,7 +118,13 @@
                 text-decoration: underline;
                 @include anim(all, 0.3s, ease-out, 0s);
 
-                &:hover {
+                @media (hover: hover) {
+                    &:hover {
+                        color: $red;
+                    }
+                }
+
+                &:active {
                     color: $red;
                 }
             }
@@ -107,13 +135,27 @@
         position: absolute;
         bottom: 20px;
         right: 20px;
+        @media screen and (max-width: 1024px) {
+            bottom: unset;
+            top: 15px;
+            right: 15px;
+        }
 
         path,
         svg {
             @include anim(all, 0.3s, ease-out, 0s);
         }
-
-        &:hover {
+        @media (hover: hover) {
+            &:hover {
+                svg {
+                    @include scale(1.2);
+                }
+                path {
+                    fill: $red;
+                }
+            }
+        }
+        &:active {
             svg {
                 @include scale(1.2);
             }
@@ -124,7 +166,26 @@
     }
 
     &__history {
+        max-width: 905px;
         padding: 128px 0 42px 45px;
+        position: relative;
+        @media screen and (max-width: 1260px) {
+            max-width: none;
+            width: 100%;
+        }
+        @media screen and (max-width: 1024px) {
+            width: auto;
+            padding-left: 0;
+            align-self: start;
+            padding-bottom: 70px;
+        }
+        @media screen and (max-width: 992px) {
+            padding-top: 100px;
+        }
+        @media screen and (max-width: 834px) {
+            padding: 0;
+            padding-bottom: 60px;
+        }
     }
 
     &__history-head {
@@ -133,14 +194,29 @@
         justify-content: space-between;
         text-transform: uppercase;
         margin-bottom: 43px;
-        max-width: 945px;
     }
 
     .swiper-nav {
+        position: absolute;
+        top: 128px;
+        right: 25px;
         width: 140px;
         @include flexbox();
         justify-content: space-between;
         align-items: center;
+
+        @media screen and (max-width: 1024px) {
+            gap: 40px;
+            justify-content: center;
+            top: unset;
+            bottom: 0;
+            right: unset;
+            left: 50%;
+            @include tr(-50%, 0);
+        }
+        @media screen and (max-width: 834px) {
+            display: none;
+        }
     }
     .swiper-nav-item {
         position: static;
@@ -157,8 +233,13 @@
         path {
             stroke-width: 3px;
         }
-
-        &:hover {
+        @media (hover: hover) {
+            &:hover {
+                background-color: $red;
+                border-color: $red;
+            }
+        }
+        &:active {
             background-color: $red;
             border-color: $red;
         }
@@ -169,7 +250,14 @@
     }
 
     .swiper-button-prev {
-        &:hover {
+        @media (hover: hover) {
+            &:hover {
+                svg {
+                    @include tr_rot(-5px, 0, 180deg);
+                }
+            }
+        }
+        &:active {
             svg {
                 @include tr_rot(-5px, 0, 180deg);
             }
@@ -181,100 +269,94 @@
         path {
             stroke: #ffffff;
         }
-        &:hover {
-            svg {
-                @include tr(5px, 0);
-            }
-        }
-    }
-    &__history-slider {
-    }
-    .swiper {
-        width: 1340px;
-    }
-    .swiper-wrapper {
-    }
-}
-.favs {
-    .title {
-        margin-bottom: 70px;
-    }
-    &__wrapper {
-        @include grid();
-        grid-template-columns: repeat(3, 1fr);
-        gap: 35px;
-        row-gap: 70px;
-        margin-bottom: 100px;
-    }
-
-    &__pagination {
-        margin-bottom: 155px;
-        @include flexbox();
-        align-items: center;
-        justify-content: center;
-        gap: 80px;
-    }
-
-    &__pages {
-        @include flexbox();
-        align-items: end;
-        gap: 15px;
-
-        li {
-            color: #6f6f6f;
-            font-size: 16px;
-            @include anim(all, 0.3s, ease-out, 0s);
-            line-height: 70%;
-            user-select: none;
-
-            a {
-                line-height: 70%;
-            }
-
-            &:hover:not(.active, .dots) {
-                color: $red;
-            }
-
-            &.active {
-                margin-right: 4px;
-                color: #000000;
-                font-weight: 600;
-                font-size: 32px;
-            }
-        }
-    }
-
-    &__nav {
-        padding: 0;
-        @include flexbox();
-        align-items: center;
-        justify-content: center;
-        height: 60px;
-        width: 60px;
-        border-radius: 50%;
-
-        svg {
-            @include anim(all, 0.3s, ease-out, 0s);
-        }
-
-        &_prev {
-            border: 1px solid #000000;
-
-            &:hover {
-                svg {
-                    @include tr_rot(-5px, 0, 180deg);
-                }
-            }
-        }
-        &_next {
-            path {
-                stroke: #ffffff;
-            }
+        @media (hover: hover) {
             &:hover {
                 svg {
                     @include tr(5px, 0);
                 }
             }
         }
+        &:active {
+            svg {
+                @include tr(5px, 0);
+            }
+        }
     }
+    &__history-slider {
+        width: 1340px;
+        @media screen and (max-width: 1440px) {
+            width: 930px;
+        }
+        @media screen and (max-width: 1260px) {
+            width: 600px;
+        }
+        @media screen and (max-width: 1024px) {
+            width: 360px;
+            margin: 0;
+        }
+        @media screen and (max-width: 834px) {
+            width: 100%;
+            padding-bottom: 50px;
+        }
+        .fav-button {
+            @media screen and (max-width: 1024px) {
+                width: 20px;
+                height: 20px;
+            }
+
+            svg {
+                @media screen and (max-width: 1024px) {
+                    width: 9px;
+                    height: 8px;
+                }
+            }
+        }
+
+        .product-card-mini {
+            h3 {
+                font-size: 24px;
+                @media screen and (max-width: 1024px) {
+                    font-size: 15px;
+                }
+                @media screen and (max-width: 834px) {
+                    font-size: clamp(15px, 3.7vw, 24px);
+                }
+            }
+        }
+    }
+    .swiper {
+    }
+    .swiper-wrapper {
+    }
+
+    .swiper-pagination {
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        margin: 0px auto;
+        display: none;
+
+        @media screen and (max-width: 834px) {
+            @include flexbox();
+        }
+
+        &-bullet {
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            background-color: #c6c6c6;
+            @include anim(all, 0.3s, ease-out, 0s);
+        }
+
+        &-bullet-active {
+            width: 10px;
+            height: 10px;
+            background-color: #000;
+        }
+    }
+}
+
+.favs {
+    padding-top: 0;
+    border: none;
 }

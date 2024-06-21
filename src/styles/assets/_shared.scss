@@ -272,6 +272,9 @@ input[type="tel"] {
                 color: $red;
             }
         }
+        &:active {
+            color: $red;
+        }
     }
 }
 

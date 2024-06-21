@@ -69,8 +69,8 @@ function validateBirthDate(dateString) {
 
 //NOTE - Функция вызыва сообщения об ошибке
 
-function showMessage(elem, text, isPayment) {
-    if (isPayment) {
+function showMessage(elem, text, isIntime) {
+    if (isIntime) {
         elem.addClass("error").text(text);
         return;
     }
@@ -87,40 +87,36 @@ function showMessage(elem, text, isPayment) {
 
 //NOTE - Функция проверки инпута для вывода сообщения
 
-function checkInputForMessage(input, inputVal, errorText, isPayment) {
+function checkInputForMessage(input, inputVal, errorText, isIntime) {
     const messageWrapper = input.closest(".message-wrapper");
     const message = messageWrapper.find(".message");
     if (!inputVal) {
-        showMessage(message, errorText, isPayment);
+        showMessage(message, errorText, isIntime);
         return false;
     }
     if (input.attr("data-type") == "email" && !validateEmail(inputVal)) {
-        showMessage(message, "Пожалуйста, введите корректный Email", isPayment);
+        showMessage(message, "Пожалуйста, введите корректный Email", isIntime);
         return false;
     }
     if (
         input.attr("data-type") == "signup-pass" &&
         !validatePassword(inputVal)
     ) {
-        showMessage(
-            message,
-            "Пожалуйста, введите корректный пароль",
-            isPayment
-        );
+        showMessage(message, "Пожалуйста, введите корректный пароль", isIntime);
         return false;
     }
     if (
         input.attr("data-type") == "signup-pass-repeat" &&
         !validatePasswordRepeat(input, inputVal)
     ) {
-        showMessage(message, "Пароли должны совпадать", isPayment);
+        showMessage(message, "Пароли должны совпадать", isIntime);
         return false;
     }
     if (input.attr("data-type") == "birth" && !validateBirthDate(inputVal)) {
         showMessage(
             message,
             "Пожалуйста, введите корректную дату рождения",
-            isPayment
+            isIntime
         );
         return false;
     }
@@ -128,7 +124,7 @@ function checkInputForMessage(input, inputVal, errorText, isPayment) {
         showMessage(
             message,
             "Пожалуйста, введите корректный номер телефона",
-            isPayment
+            isIntime
         );
         return false;
     }
@@ -142,7 +138,7 @@ function checkIntimeInput(
     input,
     inputVal,
     errorText = "Вам необходимо корректно заполнить поля",
-    isPayment
+    isIntime
 ) {
     const messageWrapper = input.closest(".message-wrapper");
     const message = messageWrapper.find(".message");
@@ -160,7 +156,7 @@ function checkIntimeInput(
         messageWrapper.addClass("error");
     }
 
-    if (!checkInputForMessage(input, inputVal, errorText, isPayment))
+    if (!checkInputForMessage(input, inputVal, errorText, isIntime))
         return false;
 
     input.removeClass("error");
@@ -175,7 +171,7 @@ function checkInput(
     input,
     inputVal,
     errorText = "Вам необходимо корректно заполнить поля",
-    isPayment
+    isIntime
 ) {
     const messageWrapper = input.closest(".message-wrapper");
     const message = messageWrapper.find(".message");
@@ -214,7 +210,7 @@ function checkInput(
         return;
     }
 
-    if (!checkInputForMessage(input, inputVal, errorText, isPayment))
+    if (!checkInputForMessage(input, inputVal, errorText, isIntime))
         return false;
 
     input.removeClass("error");
@@ -271,7 +267,7 @@ function removeInputErrorStatePayment() {
 
 //NOTE - Функция проверки формы
 
-function checkForm(inputs, isPayment = false) {
+function checkForm(inputs, isIntime = false) {
     let response = {};
 
     inputs.forEach((input) => {
@@ -279,7 +275,7 @@ function checkForm(inputs, isPayment = false) {
             input.elem,
             input.value,
             input.errorText,
-            isPayment
+            isIntime
         );
     });
     for (let elem in response) {

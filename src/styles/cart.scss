@@ -6,12 +6,21 @@
 
 .cart {
     padding-bottom: 100px;
+    @media only screen and (max-width: 992px) {
+        padding-bottom: 60px;
+    }
+    @media only screen and (max-width: 600px) {
+        padding-bottom: 70px;
+    }
 
     &__head {
         @include flexbox();
         align-items: end;
         justify-content: space-between;
         margin-bottom: 20px;
+        @media only screen and (max-width: 992px) {
+            align-items: center;
+        }
 
         .separator {
             margin-right: 20px;
@@ -20,23 +29,37 @@
             width: 1px;
             height: 38px;
             background-color: #4a4a4a;
+            @media only screen and (max-width: 992px) {
+                margin-right: 10px;
+                margin-left: 15px;
+                margin-bottom: 0;
+            }
         }
     }
 
     &__title {
         @include flexbox();
         align-items: end;
+        @media only screen and (max-width: 992px) {
+            align-items: center;
+        }
     }
 
     &__count {
         font-size: 24px;
         color: #4a4a4a;
+        @media only screen and (max-width: 992px) {
+            font-size: 16px;
+        }
     }
 
     &__clear {
         font-size: 20px;
         color: #6f6f6f;
         @include anim(all, 0.3s, ease-out, 0s);
+        @media only screen and (max-width: 992px) {
+            font-size: 13px;
+        }
 
         &:hover {
             color: $red;
@@ -45,6 +68,12 @@
 
     &__slider {
         margin-bottom: 100px;
+        @media only screen and (max-width: 992px) {
+            margin-bottom: 60px;
+        }
+        @media only screen and (max-width: 600px) {
+            margin-bottom: 50px;
+        }
     }
 
     &.disabled {
@@ -64,6 +93,12 @@
         justify-content: space-between;
         align-items: center;
         margin-bottom: 90px;
+        @media only screen and (max-width: 992px) {
+            margin-bottom: 42px;
+        }
+        @media only screen and (max-width: 600px) {
+            margin-bottom: 60px;
+        }
     }
     .swiper-nav-item {
         position: static;
@@ -98,6 +133,10 @@
         @include flexbox();
         justify-content: space-between;
         padding-right: 160px;
+        gap: 20px;
+        @media only screen and (max-width: 1260px) {
+            padding-right: 0;
+        }
 
         .btn {
             width: 100%;
@@ -112,6 +151,13 @@
         max-width: 415px;
         width: 100%;
         min-width: 250px;
+        @media only screen and (max-width: 992px) {
+            padding-top: 0;
+            min-width: 180px;
+        }
+        @media only screen and (max-width: 600px) {
+            display: none;
+        }
 
         input {
             width: 100%;
@@ -137,6 +183,23 @@
     &__result {
         max-width: 330px;
         width: 100%;
+        @include flexbox();
+        flex-direction: column;
+
+        @media only screen and (max-width: 600px) {
+            max-width: none;
+        }
+
+        .cart__promo {
+            display: none;
+            @media only screen and (max-width: 600px) {
+                display: block;
+                min-width: auto;
+                max-width: none;
+                width: 100%;
+                margin-bottom: 25px;
+            }
+        }
     }
 
     &__total {
@@ -145,15 +208,23 @@
         gap: 28px;
         text-transform: uppercase;
         margin-bottom: 23px;
+        @media only screen and (max-width: 1260px) {
+            justify-content: space-between;
+        }
+        @media only screen and (max-width: 600px) {
+            max-width: 250px;
+            width: 100%;
+            align-self: flex-end;
+        }
 
         span {
-            font-size: 40px;
+            font-size: clamp(32px, 3.8vw, 40px);
             font-family: $subtitleFont;
             font-weight: 300;
         }
 
         strong {
-            font-size: 48px;
+            font-size: clamp(32px, 3.8vw, 48px);
             font-weight: 500;
         }
     }
@@ -163,6 +234,14 @@
         align-items: center;
         gap: 42px;
         margin-bottom: 50px;
+        @media only screen and (max-width: 1260px) {
+            justify-content: space-between;
+        }
+        @media only screen and (max-width: 600px) {
+            max-width: 250px;
+            width: 100%;
+            align-self: flex-end;
+        }
 
         span {
             font-size: 16px;

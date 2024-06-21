@@ -36,7 +36,7 @@
 
     h3 {
         @include anim(all, 0.3s, ease-out, 0s);
-        font-size: 24px;
+        font-size: clamp(15px, 2.3vw, 24px);
     }
     &__header {
         width: 100%;

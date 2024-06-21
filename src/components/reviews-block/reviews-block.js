@@ -1,6 +1,7 @@
 //NOTE - Слайдер отзывов
 
 const reviewsSwiper = new Swiper(".reviews__slider", {
+    slidesPerView: 3,
     loop: true,
     navigation: {
         nextEl: ".reviews__nav .swiper-button-next",

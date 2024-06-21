@@ -2,6 +2,17 @@
     cursor: pointer;
     @include flexbox();
     gap: 15px;
+
+    &:not(.swiper-slide) {
+        flex: 1;
+    }
+
+    &.swiper-slide {
+        .offer-advantage__text p {
+            flex-basis: auto;
+        }
+    }
+
     @media screen and (max-width: 834px) {
         padding: 3px 0 0 3px;
     }
@@ -27,6 +38,7 @@
         flex-shrink: 0;
         position: relative;
         overflow: hidden;
+        align-self: center;
 
         img {
             border-radius: 50%;

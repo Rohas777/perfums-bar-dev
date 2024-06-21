@@ -33,6 +33,13 @@
     -o-transform: rotate($deg) scale($num);
     transform: rotate($deg) scale($num);
 }
+@mixin rot_scaleX($deg, $num) {
+    -moz-transform: rotate($deg) scaleX($num);
+    -ms-transform: rotate($deg) scaleX($num);
+    -webkit-transform: rotate($deg) scaleX($num);
+    -o-transform: rotate($deg) scaleX($num);
+    transform: rotate($deg) scaleX($num);
+}
 @mixin tr_rot($x, $y, $deg) {
     -moz-transform: translate($x, $y) rotate($deg);
     -ms-transform: translate($x, $y) rotate($deg);

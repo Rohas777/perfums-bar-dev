@@ -1,21 +1,21 @@
 [
     {
         "id": 0,
-        "classes": "",
+        "classes": "swiper-slide",
         "img": "/images/offer/adv1.jpg",
         "title": "Богатый выбор",
         "desc": "В нашем магазине вы найдете огромный выбор ароматов парфюмерной жидкости и ароматизированных масел..."
     },
     {
         "id": 1,
-        "classes": "",
+        "classes": "swiper-slide",
         "img": "/images/offer/adv2.jpg",
         "title": "Популярность бренда",
         "desc": "Популярность бренда Perfums Bar – это не только более 200 магазинов по всему миру..."
     },
     {
         "id": 2,
-        "classes": "",
+        "classes": "swiper-slide",
         "img": "/images/offer/adv3.jpg",
         "title": "Надежное качество по честной цене",
         "desc": "У нас вы найдете честные цены и безупречное качество!"

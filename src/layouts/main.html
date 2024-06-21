@@ -21,10 +21,14 @@
         </div>
         <div class="offer__advantages">
             <div class="container">
+                <div class="offer-advantages__wrapper">
+                    @@loop('components/offer-advantage/offer-advantage.html',
+                    '../data/offer-advantages.json')
+                </div>
                 <div class="swiper offer-advantages__slider">
                     <div class="swiper-wrapper">
                         @@loop('components/offer-advantage/offer-advantage.html',
-                        '../data/offer-advantages.json')
+                        '../data/offer-advantages-swiper.json')
                     </div>
                     <div class="swiper-button-nav swiper-button-prev">
                         <svg

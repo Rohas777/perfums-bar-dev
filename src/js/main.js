@@ -33,22 +33,12 @@ $(document).ready(function () {
     //NOTE - Слайдер в преимуществ оффере
 
     const offerAdvantagesSwiper = new Swiper(".offer-advantages__slider", {
-        spaceBetween: 30,
+        slidesPerView: 1,
+        spaceBetween: 40,
         loop: true,
-
-        breakpoints: {
-            0: {
-                slidesPerView: 1,
-                spaceBetween: 40,
-                navigation: {
-                    nextEl: ".offer-advantages__slider .swiper-button-next",
-                    prevEl: ".offer-advantages__slider .swiper-button-prev",
-                },
-            },
-            835: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-            },
+        navigation: {
+            nextEl: ".offer-advantages__slider .swiper-button-next",
+            prevEl: ".offer-advantages__slider .swiper-button-prev",
         },
     });
 

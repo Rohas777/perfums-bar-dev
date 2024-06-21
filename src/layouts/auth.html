@@ -15,13 +15,13 @@
                 >
                     вход
                 </button>
-                <button
-                    data-switch="reset-pass"
-                    class="auth__switch btn btn_border"
-                >
+                <button class="auth__switch auth__switch_reset btn btn_border">
                     Сбросить пароль
                 </button>
             </div>
+            <button class="auth__switch auth__switch_reset btn btn_border">
+                Сбросить пароль
+            </button>
             <div class="auth__wrapper">
                 <div class="auth__form-wrapper">
                     <form
@@ -57,7 +57,7 @@
                             />
                             <div class="message"></div>
                         </div>
-                        <div class="message-wrapper auth__item">
+                        <div class="message-wrapper auth__item auth__item_flex">
                             <div class="auth__item-wrapper">
                                 <div class="auth__sex">
                                     <span>Пол</span>
@@ -203,27 +203,41 @@
                         </button>
                     </form>
                 </div>
-                <div class="auth__form-wrapper">
-                    <form
-                        id="reset-pass"
-                        class="auth__form auth__form_reset-pass"
-                    >
-                        <div class="message-wrapper auth__item">
-                            <input
-                                placeholder="Ваш e-mail"
-                                type="text"
-                                data-type="email"
-                                name="reset-pass-email"
-                                id="reset-pass-email"
-                            />
-                            <div class="message"></div>
-                        </div>
-                        <button type="submit" class="btn btn_black">
-                            Сбросить
-                        </button>
-                    </form>
-                </div>
             </div>
+        </div>
+    </section>
+    <section class="reset-pass-popup pass-popup">
+        <div class="reset-pass-popup__wrapper pass-popup__wrapper">
+            <div class="reset-pass-popup__close pass-popup__close">
+                <span></span>
+            </div>
+            <form
+                id="reset-pass"
+                class="auth__form auth__form_reset-pass popup-form"
+            >
+                <h2 class="title">Смена пароля</h2>
+                <p class="desc">Введите адрес своей почты для смены пароля</p>
+                <div class="message-wrapper auth__item">
+                    <input
+                        placeholder="Ваш e-mail"
+                        type="text"
+                        data-type="email"
+                        name="reset-pass-email"
+                        id="reset-pass-email"
+                    />
+                    <div class="message"></div>
+                </div>
+                <button type="submit" class="btn btn_black">отправить</button>
+            </form>
+            <div class="links">
+                <a href="/" class="link link_dim">Не пришло письмо?</a>
+                <a href="/" class="link">Отправить повторно</a>
+            </div>
+            <img
+                src="/images/bg/popup1.png"
+                class="reset-pass-popup__bg pass-popup__bg"
+                alt=""
+            />
         </div>
     </section>
 </main>

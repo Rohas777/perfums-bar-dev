@@ -12,6 +12,24 @@ $(document).ready(function () {
                 nextEl: ".cart .swiper-button-next",
                 prevEl: ".cart .swiper-button-prev",
             },
+
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+                361: {
+                    slidesPerView: 2,
+                },
+                601: {
+                    slidesPerView: 3,
+                },
+                769: {
+                    slidesPerView: 4,
+                },
+                993: {
+                    slidesPerView: 3,
+                },
+            },
         });
     } else {
         $(".cart").addClass("disabled");
@@ -27,6 +45,20 @@ $(document).ready(function () {
         navigation: {
             nextEl: ".recommendations__slider .swiper-button-next",
             prevEl: ".recommendations__slider .swiper-button-prev",
+        },
+        breakpoints: {
+            0: {
+                slidesPerView: 1,
+            },
+            391: {
+                slidesPerView: 2,
+            },
+            601: {
+                slidesPerView: 4,
+            },
+            1261: {
+                slidesPerView: 3,
+            },
         },
     });
 });

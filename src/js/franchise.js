@@ -39,9 +39,18 @@ $(document).ready(function () {
             .next("section")
             .offset().top;
 
+        let offset = parseFloat(
+            window
+                .getComputedStyle(document.documentElement)
+                .getPropertyValue("--header-height")
+                .trim()
+        );
+
+        console.log(offset);
+
         $("body, html").animate(
             {
-                scrollTop: scrollTarget,
+                scrollTop: scrollTarget - offset,
             },
             "slow"
         );
@@ -73,11 +82,29 @@ $(document).ready(function () {
         console.log(checkForm(inputs));
     });
 
+    //NOTE - Слайдер в мобильной верссии блока аудитории
+
+    const audienceSwiper = new Swiper(".audience__slider", {
+        slidesPerView: 1,
+        spaceBetween: 230,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+        },
+
+        navigation: {
+            nextEl: ".audience .swiper-button-next",
+            prevEl: ".audience .swiper-button-prev",
+        },
+        pagination: {
+            el: ".audience__slider .swiper-pagination",
+            clickable: true,
+        },
+    });
+
     //NOTE - Слайдер магазинов
 
     const storesSwiper = new Swiper(".stores__slider", {
-        slidesPerView: 4,
-        spaceBetween: 40,
         loop: true,
         autoplay: {
             delay: 5000,
@@ -86,6 +113,21 @@ $(document).ready(function () {
         navigation: {
             nextEl: ".stores__swiper-container .swiper-button-next",
             prevEl: ".stores__swiper-container .swiper-button-prev",
+        },
+        pagination: {
+            el: ".stores__swiper-container .swiper-pagination",
+            clickable: true,
+        },
+
+        breakpoints: {
+            0: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+            },
+            993: {
+                slidesPerView: 4,
+                spaceBetween: 40,
+            },
         },
     });
 });

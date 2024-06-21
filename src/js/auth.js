@@ -12,17 +12,58 @@ $(document).ready(function () {
 
     $(".auth__form.active").slideDown();
 
-    $(".auth__switch, .auth__signin-reset").click(function (e) {
+    $(".auth__switch")
+        .not(".auth__switch_reset")
+        .click(function (e) {
+            e.preventDefault();
+            if ($(this).hasClass("active")) return;
+
+            const switchType = $(this).attr("data-switch"),
+                switchForm = $("#" + switchType);
+
+            $(".auth__switch").not($(this)).removeClass("active");
+            $(".auth__form")
+                .not(switchForm)
+                .not(".popup-form")
+                .animate({ opacity: 0 }, 400)
+                .slideUp(400)
+                .removeClass("active");
+            switchForm
+                .animate({ opacity: 1 }, 400)
+                .slideDown(400)
+                .addClass("active");
+            $(this).addClass("active");
+        });
+
+    $(".auth__switch_reset, .auth__signin-reset").click(function (e) {
         e.preventDefault();
         if ($(this).hasClass("active")) return;
 
-        const switchType = $(this).attr("data-switch"),
-            switchForm = $("#" + switchType);
+        turnOverlay(true);
+        const resetPopup = $(".reset-pass-popup");
 
-        $(".auth__switch").not($(this)).removeClass("active");
-        $(".auth__form").not(switchForm).slideUp(400).removeClass("active");
-        switchForm.slideDown(400).addClass("active");
+        resetPopup.addClass("active").fadeIn(400);
         $(this).not(".auth__signin-reset").addClass("active");
+    });
+
+    $(".pass-popup__close").click(function () {
+        $(this).closest(".pass-popup").removeClass("active").fadeOut(400);
+        turnOverlay(false);
+        $(".auth__switch_reset").removeClass("active");
+    });
+
+    $(document).on("mouseup", function (e) {
+        let popup = $(".pass-popup.active");
+
+        if (
+            !popup.find(".pass-popup__wrapper").is(e.target) &&
+            !popup.find(".pass-popup__wrapper").find(e.target).length &&
+            popup.hasClass("active")
+        ) {
+            popup.removeClass("active").fadeOut(400);
+            turnOverlay(false);
+            $(".auth__switch_reset").removeClass("active");
+        }
     });
 
     //NOTE - Переключение входа по email/телефону
